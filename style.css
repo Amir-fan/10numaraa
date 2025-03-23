@@ -1283,3 +1283,245 @@ html {
     }
 }
 
+/* Dev Tag Styles */
+.dev-tag {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.dev-tag a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--cream);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 50px;
+    background: rgba(212, 43, 43, 0.1);
+    border: 1px solid rgba(212, 43, 43, 0.2);
+}
+
+.dev-tag a:hover {
+    background: rgba(212, 43, 43, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(212, 43, 43, 0.2);
+}
+
+.dev-logo-container {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.dev-tag a:hover .dev-logo-container {
+    transform: scale(1.05);
+}
+
+.dev-logo {
+    height: 88px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.dev-tag a:hover .dev-logo {
+    transform: scale(1.1);
+}
+
+.dev-tag span {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 480px) {
+    .dev-tag a {
+        padding: 1.2rem;
+    }
+
+    .dev-logo {
+        height: 72px;
+    }
+
+    .dev-logo-container {
+        padding: 0.4rem;
+    }
+
+    .dev-tag span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Popup Logo Styles */
+.popup-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.popup-dev-logo {
+    height: 88px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.popup-dev-logo:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 480px) {
+    .dev-tag a {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .dev-logo {
+        height: 72px;
+    }
+
+    .dev-tag span {
+        font-size: 0.9rem;
+    }
+
+    .popup-dev-logo {
+        height: 72px;
+    }
+}
+
+/* Contact Popup Styles */
+.contact-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-popup.active {
+    display: flex;
+}
+
+.popup-content {
+    background: var(--black-light);
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid rgba(212, 43, 43, 0.2);
+    box-shadow: 0 0 30px rgba(212, 43, 43, 0.2);
+    animation: popupFadeIn 0.3s ease;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    color: #D42B2B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-popup:hover {
+    color: #FF4444;
+    transform: rotate(90deg);
+}
+
+.popup-content h3 {
+    color: #D42B2B;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(212, 43, 43, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 43, 43, 0.2);
+}
+
+.contact-item:hover {
+    background: rgba(212, 43, 43, 0.15);
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #D42B2B;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 43, 43, 0.1);
+    border-radius: 50%;
+    border: 1px solid rgba(212, 43, 43, 0.2);
+}
+
+.contact-item a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #D42B2B;
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .popup-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-item {
+        padding: 0.8rem;
+    }
+    
+    .contact-item a {
+        font-size: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+    }
+}
+
