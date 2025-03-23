@@ -108,6 +108,27 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Contact Popup -->
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <div class="popup-logo">
+                <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="popup-dev-logo" loading="lazy">
+            </div>
+            <h2>İletişim Bilgileri</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+905379295163">+90 537 929 51 63</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:fanarilab@gmail.com">fanarilab@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -140,7 +161,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 10 Numara Ambalaj. Tüm Hakları Saklıdır.</p>
+                <p>&copy; 10 numara ambalaj. Tüm hakları saklıdır.</p>
+                <div class="dev-tag">
+                    <a href="#" id="devContact">
+                        <div class="dev-logo-container">
+                            <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="dev-logo" loading="lazy">
+                        </div>
+                        <span>Fanari Lab Tarafından Geliştirildi, iletişim icin tıklayınız</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -175,6 +204,40 @@
                 menuItems.style.display = menuItems.style.display === 'block' ? 'none' : 'block';
             });
         }
+
+        // Contact Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const devContact = document.getElementById('devContact');
+            const contactPopup = document.getElementById('contactPopup');
+            const closePopup = document.getElementById('closePopup');
+
+            if (devContact && contactPopup && closePopup) {
+                devContact.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    contactPopup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closePopup.addEventListener('click', function() {
+                    contactPopup.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+
+                contactPopup.addEventListener('click', function(e) {
+                    if (e.target === contactPopup) {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && contactPopup.style.display === 'flex') {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
