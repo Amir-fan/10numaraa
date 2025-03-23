@@ -16,9 +16,11 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://10numaraambalaj.com">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -50,7 +52,7 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </head>
 
 <body>
@@ -179,6 +181,27 @@
         <button class="lightbox-next" id="nextBtn">&gt;</button>
     </div>
 
+    <!-- Contact Popup -->
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <div class="popup-logo">
+                <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="popup-dev-logo" loading="lazy">
+            </div>
+            <h2>İletişim Bilgileri</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+905379295163">+90 537 929 51 63</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:fanarilab@gmail.com">fanarilab@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -211,7 +234,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 10 Numara Ambalaj. Tüm Hakları Saklıdır.</p>
+                <p>&copy; 10 numara ambalaj. Tüm hakları saklıdır.</p>
+                <div class="dev-tag">
+                    <a href="#" id="devContact">
+                        <div class="dev-logo-container">
+                            <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="dev-logo" loading="lazy">
+                        </div>
+                        <span>Fanari Lab Tarafından Geliştirildi, iletişim icin tıklayınız</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -248,23 +279,42 @@
         
         if (menuIcon) {
             menuIcon.addEventListener('click', function() {
-                menuItems.classList.toggle('active');
+                menuItems.style.display = menuItems.style.display === 'block' ? 'none' : 'block';
             });
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menuItems.contains(event.target) && !menuIcon.contains(event.target)) {
-                menuItems.classList.remove('active');
-            }
-        });
+        // Contact Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const devContact = document.getElementById('devContact');
+            const contactPopup = document.getElementById('contactPopup');
+            const closePopup = document.getElementById('closePopup');
 
-        // Close mobile menu when clicking a link
-        const menuLinks = menuItems.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuItems.classList.remove('active');
-            });
+            if (devContact && contactPopup && closePopup) {
+                devContact.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    contactPopup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closePopup.addEventListener('click', function() {
+                    contactPopup.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+
+                contactPopup.addEventListener('click', function(e) {
+                    if (e.target === contactPopup) {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && contactPopup.style.display === 'flex') {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
         });
 
         // Lightbox functionality
