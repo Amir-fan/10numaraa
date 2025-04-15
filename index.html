@@ -16,9 +16,12 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://10numaraambalaj.com">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -41,16 +44,9 @@
         }
     }
     </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'tr',
-                includedLanguages: 'en,ar,tr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -66,26 +62,56 @@
                 <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
             </div>
             <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="products.html">Ürünler</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
+                <ul>
+                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                    <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
+                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                 </ul>
-                <i class="fas fa-bars menu-icon"></i>
             </nav>
-            <div id="google_translate_element"></div>
+            <div class="language-selector">
+                <select id="language-selector" onchange="window.setLanguage(this.value)">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
         </div>
     </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+            <li><a href="products.html" data-translate="products">Ürünler</a></li>
+            <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
+            <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <h1>Ambalajda Kaliteyi <br> Yeniden Tanımlayın!</h1>
-                    <p>Başarı her zaman büyüklükle ilgili değildir. Tutarlılıkla ilgilidir.<br>
-                        Kaliteli üretim ve sürekli gelişim başarıyı getirir.</p>
-                    <a href="products.html" class="btn">Hemen Keşfet &#8594;</a>
+                    <h1 data-translate="welcome">Ambalajda Kaliteyi Yeniden Tanımlayın!</h1>
+                    <p data-translate="welcome_message">Başarı her zaman büyüklükle ilgili değildir. Tutarlılıkla ilgilidir. Kaliteli üretim ve sürekli gelişim başarıyı getirir.</p>
+                    <a href="products.html" class="btn" data-translate="explore_now">Hemen Keşfet &#8594;</a>
                 </div>
                 <div class="col-2">
                     <img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo">
@@ -98,40 +124,40 @@
     <section class="products">
         <div class="container">
             <div class="title">
-                <h2>Ürünlerimiz</h2>
-                <p>En kaliteli plastik poşet çözümleri</p>
+                <h2 data-translate="our_products">Ürünlerimiz</h2>
+                <p data-translate="product_details">En kaliteli plastik poşet çözümleri</p>
             </div>
             <div class="row">
                 <div class="product-card">
                     <img src="images/product-0.png" alt="Market Poşeti">
                     <div class="product-info">
-                        <h3>Market Poşeti</h3>
-                        <p>Yüksek kaliteli, dayanıklı market poşetleri</p>
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <h3 data-translate="market_bag">Market Poşeti</h3>
+                        <p data-translate="market_bag_desc">Yüksek kaliteli, dayanıklı market poşetleri</p>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <img src="images/product-1.png" alt="Özel Tasarım Poşet">
                     <div class="product-info">
-                        <h3>Özel Tasarım Poşet</h3>
-                        <p>Markanıza özel tasarlanmış poşetler</p>
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <h3 data-translate="custom_bag">Özel Tasarım Poşet</h3>
+                        <p data-translate="custom_bag_desc">Markanıza özel tasarlanmış poşetler</p>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <img src="images/product-2.png" alt="Kurumsal Poşet">
                     <div class="product-info">
-                        <h3>Kurumsal Poşet</h3>
-                        <p>Kurumsal kimliğinizi yansıtan poşetler</p>
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <h3 data-translate="corporate_bag">Kurumsal Poşet</h3>
+                        <p data-translate="corporate_bag_desc">Kurumsal kimliğinizi yansıtan poşetler</p>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <img src="images/product-3.png" alt="Promosyon Poşeti">
                     <div class="product-info">
-                        <h3>Promosyon Poşeti</h3>
-                        <p>Etkinlikleriniz için özel tasarım poşetler</p>
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <h3 data-translate="promo_bag">Promosyon Poşeti</h3>
+                        <p data-translate="promo_bag_desc">Etkinlikleriniz için özel tasarım poşetler</p>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
             </div>
@@ -143,8 +169,8 @@
         <div class="container">
             <div class="row">
                 <div class="contact-info">
-                    <h2>İletişime Geçin</h2>
-                    <p>Kaliteli ambalaj çözümleri için hemen arayın!</p>
+                    <h2 data-translate="get_in_touch">İletişime Geçin</h2>
+                    <p data-translate="quality_solutions">Kaliteli ambalaj çözümleri için hemen arayın!</p>
                     <ul>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -156,7 +182,7 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>Pazartesi - Cumartesi: 08:00 - 19:00</span>
+                            <span data-translate="work_hours">Pazartesi - Cumartesi: 08:00 - 19:00</span>
                         </li>
                     </ul>
                 </div>
@@ -179,31 +205,52 @@
         <button class="lightbox-next" id="nextBtn">&gt;</button>
     </div>
 
+    <!-- Contact Popup -->
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <div class="popup-logo">
+                <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="popup-dev-logo" loading="lazy">
+            </div>
+            <h2>İletişim Bilgileri</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+905379295163" data-translate="dev_phone">+90 537 929 51 63</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:fanarilabs@gmail.com" data-translate="dev_email">fanarilabs@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
-                    <h3>Hakkımızda</h3>
-                    <p>10 Numara Ambalaj olarak, yüksek kaliteli plastik poşet çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+                    <h3 data-translate="about_us">Hakkımızda</h3>
+                    <p data-translate="about_us_desc">10 Numara Ambalaj olarak, yüksek kaliteli plastik poşet çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Hızlı Linkler</h3>
+                    <h3 data-translate="quick_links">Hızlı Linkler</h3>
                     <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="products.html">Ürünler</a></li>
-                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>İletişim</h3>
+                    <h3 data-translate="contact">İletişim</h3>
                     <ul>
                         <li><a href="tel:+905013668033">+90 (501) 366 80 33</a></li>
                         <li><a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Sosyal Medya</h3>
+                    <h3 data-translate="social_media">Sosyal Medya</h3>
                     <ul>
                         <li><a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank">Instagram</a></li>
                         <li><a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank">TikTok</a></li>
@@ -211,7 +258,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 10 Numara Ambalaj. Tüm Hakları Saklıdır.</p>
+                <p data-translate="rights_reserved">&copy; 10 numara ambalaj. Tüm hakları saklıdır.</p>
+                <div class="dev-tag">
+                    <a href="#" id="devContact" data-translate="developed_by">
+                        <div class="dev-logo-container">
+                            <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="dev-logo" loading="lazy">
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -223,6 +277,30 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("active");
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function(e) {
+            const mobileMenu = document.getElementById("mobileMenu");
+            const menuToggle = document.querySelector(".menu-toggle");
+            
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("active")) {
+                mobileMenu.classList.remove("active");
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                const mobileMenu = document.getElementById("mobileMenu");
+                mobileMenu.classList.remove("active");
+            }
+        });
+
         // Loading Animation
         window.addEventListener('load', function() {
             const loader = document.querySelector('.loader');
@@ -242,29 +320,44 @@
             }
         });
 
-        // Mobile Menu Toggle
-        const menuItems = document.getElementById('MenuItems');
-        const menuIcon = document.querySelector('.menu-icon');
-        
-        if (menuIcon) {
-            menuIcon.addEventListener('click', function() {
-                menuItems.classList.toggle('active');
-            });
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menuItems.contains(event.target) && !menuIcon.contains(event.target)) {
-                menuItems.classList.remove('active');
-            }
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
         });
 
-        // Close mobile menu when clicking a link
-        const menuLinks = menuItems.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuItems.classList.remove('active');
-            });
+        // Contact Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const devContact = document.getElementById('devContact');
+            const contactPopup = document.getElementById('contactPopup');
+            const closePopup = document.getElementById('closePopup');
+
+            if (devContact && contactPopup && closePopup) {
+                devContact.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    contactPopup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closePopup.addEventListener('click', function() {
+                    contactPopup.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+
+                contactPopup.addEventListener('click', function(e) {
+                    if (e.target === contactPopup) {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && contactPopup.style.display === 'flex') {
+                        contactPopup.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
         });
 
         // Lightbox functionality

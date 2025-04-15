@@ -10,19 +10,35 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'tr',
-                includedLanguages: 'en,ar,tr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+            <li><a href="products.html" data-translate="products">Ürünler</a></li>
+            <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Loading Animation -->
     <div class="loader">
         <div class="spinner"></div>
@@ -36,12 +52,18 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="products.html">Ürünler</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                 </ul>
             </nav>
-            <div id="google_translate_element"></div>
+            <div class="language-selector">
+                <select id="language-selector" onchange="window.setLanguage(this.value)">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -49,12 +71,12 @@
     <section class="products-gallery">
         <div class="container">
             <div class="title">
-                <h2>Ürün Galerisi</h2>
-                <p>Kaliteli ve dayanıklı plastik poşet çözümlerimiz</p>
+                <h2 data-translate="product_gallery">Ürün Galerisi</h2>
+                <p data-translate="quality_solutions">Kaliteli ve dayanıklı plastik poşet çözümlerimiz</p>
             </div>
             <div class="notice">
                 <i class="fas fa-phone"></i>
-                <span>Siparişler sadece telefon üzerinden alınır</span>
+                <span data-translate="phone_orders">Siparişler sadece telefon üzerinden alınır</span>
             </div>
 
             <div class="gallery-grid">
@@ -62,55 +84,55 @@
                 <div class="gallery-item">
                     <img src="images/product-4.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-5.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-6.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-7.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-8.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-9.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-10.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-11.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/product-12.png" alt="Ürün" class="gallery-img">
                     <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn">Hemen Ara</a>
+                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
                     </div>
                 </div>
             </div>
@@ -179,6 +201,30 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("active");
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function(e) {
+            const mobileMenu = document.getElementById("mobileMenu");
+            const menuToggle = document.querySelector(".menu-toggle");
+            
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("active")) {
+                mobileMenu.classList.remove("active");
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                const mobileMenu = document.getElementById("mobileMenu");
+                mobileMenu.classList.remove("active");
+            }
+        });
+
         // Loading Animation
         window.addEventListener('load', function() {
             const loader = document.querySelector('.loader');
@@ -197,16 +243,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Mobile Menu Toggle
-        const menuItems = document.getElementById('MenuItems');
-        const menuIcon = document.querySelector('.menu-icon');
-        
-        if (menuIcon) {
-            menuIcon.addEventListener('click', function() {
-                menuItems.style.display = menuItems.style.display === 'block' ? 'none' : 'block';
-            });
-        }
 
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
