@@ -1,4 +1,4 @@
-﻿// Initialize AOS
+﻿﻿// Initialize AOS
 AOS.init();
 
 // Set current language

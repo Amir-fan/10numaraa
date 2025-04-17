@@ -31,6 +31,14 @@ const translations = {
         corporate_bag_desc: "Kurumsal kimliğinizi yansıtan poşetler",
         promo_bag: "Promosyon Poşeti",
         promo_bag_desc: "Etkinlikleriniz için özel tasarım poşetler",
+        printed_bag: "Baskılı Poşet",
+        printed_bag_desc: "Özel baskılı yüksek kalite poşetler",
+        industrial_bag: "Endüstriyel Poşet",
+        industrial_bag_desc: "Endüstriyel kullanım için dayanıklı poşetler",
+        video_bag: "Video Ürün",
+        video_bag_desc: "Üretim sürecimizi görmek için izleyin",
+        gift_bag: "Hediye Poşeti",
+        gift_bag_desc: "Özel günler için hediye poşetleri",
         
         // Contact Page
         contact_title: "İletişim",
@@ -87,6 +95,14 @@ const translations = {
         corporate_bag_desc: "Bags that reflect your corporate identity",
         promo_bag: "Promotional Bag",
         promo_bag_desc: "Special design bags for your events",
+        printed_bag: "Printed Bag",
+        printed_bag_desc: "Custom printed high quality bags",
+        industrial_bag: "Industrial Bag",
+        industrial_bag_desc: "Durable bags for industrial use",
+        video_bag: "Video Product",
+        video_bag_desc: "Watch to see our production process",
+        gift_bag: "Gift Bag",
+        gift_bag_desc: "Gift bags for special occasions",
         
         // Contact Page
         contact_title: "Contact",
@@ -143,6 +159,14 @@ const translations = {
         corporate_bag_desc: "أكياس تعكس هوية شركتك",
         promo_bag: "كيس ترويجي",
         promo_bag_desc: "أكياس تصميم خاص لمناسباتك",
+        printed_bag: "كيس مطبوع",
+        printed_bag_desc: "أكياس مطبوعة عالية الجودة",
+        industrial_bag: "كيس صناعي",
+        industrial_bag_desc: "أكياس متينة للاستخدام الصناعي",
+        video_bag: "منتج فيديو",
+        video_bag_desc: "شاهد عملية الإنتاج لدينا",
+        gift_bag: "كيس هدية",
+        gift_bag_desc: "أكياس هدايا للمناسبات الخاصة",
         
         // Contact Page
         contact_title: "اتصل بنا",

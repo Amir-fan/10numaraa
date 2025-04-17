@@ -420,6 +420,33 @@ nav ul li a:hover::after {
     transform: scale(1.05);
 }
 
+.product-card video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover video {
+    transform: scale(1.03);
+}
+
+.product-card video.full-video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover video.full-video {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
 .product-info {
     padding: 2rem;
     position: relative;
@@ -464,6 +491,20 @@ nav ul li a:hover::after {
     background: var(--gold);
     color: var(--black);
     transform: translateY(-2px);
+}
+
+.product-card img.full-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover img.full-image {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
 /* Modern Contact Section */
