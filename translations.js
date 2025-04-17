@@ -50,7 +50,7 @@ const translations = {
         quick_links: "Hızlı Linkler",
         social_media: "Sosyal Medya",
         rights_reserved: "© 2025 10 Numara Ambalaj. Tüm Hakları Saklıdır.",
-        developed_by: "Fanari Labs Tarafından Geliştirildi",
+        developed_by: "Fanari Labs Tarafından Geliştirildi iletisime geçmek için lütfen tıklayınız",
         
         // Contact Info
         phone: "+90 (501) 366 80 33",
@@ -106,7 +106,7 @@ const translations = {
         quick_links: "Quick Links",
         social_media: "Social Media",
         rights_reserved: "© 2025 10 Numara Ambalaj. All Rights Reserved.",
-        developed_by: "Developed by Fanari Labs",
+        developed_by: "Developed by Fanari Labs click here to contact",
         
         // Contact Info
         phone: "+90 (501) 366 80 33",
@@ -162,7 +162,7 @@ const translations = {
         quick_links: "روابط سريعة",
         social_media: "وسائل التواصل الاجتماعي",
         rights_reserved: "© 2025 10 Numara Ambalaj. جميع الحقوق محفوظة.",
-        developed_by: "تم التطوير بواسطة Fanari Labs",
+        developed_by: " تم التطوير بواسطة Fanari Labs اذا لديك سؤال يرجى الاتصال بنا",
         
         // Contact Info
         phone: "+90 (501) 366 80 33",
