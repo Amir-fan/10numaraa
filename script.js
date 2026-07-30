@@ -1,65 +1,7 @@
-﻿﻿// Initialize AOS
+﻿// Initialize AOS
 AOS.init();
 
-// Set current language
-let currentLanguage = localStorage.getItem('language') || 'tr';
-
-// Make setLanguage function globally available
-window.setLanguage = function(lang) {
-    currentLanguage = lang;
-    localStorage.setItem('language', lang);
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // Set text direction for Arabic
-    if (lang === 'ar') {
-        document.documentElement.dir = 'rtl';
-    } else {
-        document.documentElement.dir = 'ltr';
-    }
-    
-    // Translate all elements with data-translate attribute
-    const elements = document.querySelectorAll('[data-translate]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (window.translations && window.translations[lang] && window.translations[lang][key]) {
-            element.textContent = window.translations[lang][key];
-        } else {
-            console.warn(`Translation not found for key: ${key} in language: ${lang}`);
-        }
-    });
-    
-    // Update language selector
-    const languageSelectors = document.querySelectorAll('.language-selector');
-    languageSelectors.forEach(selector => {
-        selector.value = lang;
-    });
-    
-    // Update mobile menu items
-    const mobileMenuItems = document.querySelectorAll('.mobile-menu span');
-    mobileMenuItems.forEach(item => {
-        const key = item.getAttribute('data-translate');
-        if (window.translations && window.translations[lang] && window.translations[lang][key]) {
-            item.textContent = window.translations[lang][key];
-        }
-    });
-    
-    console.log(`Language changed to: ${lang}`);
-};
-
-// Initialize translations on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Set initial language
-    window.setLanguage(currentLanguage);
-    
-    // Add event listeners for language selector
-    const languageSelectors = document.querySelectorAll('.language-selector');
-    languageSelectors.forEach(selector => {
-        selector.addEventListener('change', function() {
-            window.setLanguage(this.value);
-        });
-    });
     
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -475,11 +417,6 @@ function initializeEnhancedLightbox() {
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded - Initializing components...');
-    
-    // Initialize existing functionality
-    if (typeof window.setLanguage === 'function') {
-        window.setLanguage(localStorage.getItem('language') || 'tr');
-    }
     
     // Initialize pagination with a small delay to ensure DOM is ready
     setTimeout(() => {

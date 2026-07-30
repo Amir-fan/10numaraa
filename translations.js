@@ -3,6 +3,7 @@ const translations = {
     tr: {
         // Navigation
         home: "Ana Sayfa",
+        catalog: "Katalog",
         products: "Ürünler",
         about: "Hakkımızda",
         contact: "İletişim",
@@ -10,6 +11,15 @@ const translations = {
         // Common
         call_now: "Hemen Ara",
         phone_orders: "Siparişler sadece telefon üzerinden alınır",
+        all: "Tümü",
+        unprinted_bags: "Baskısız Poşetler",
+        printed_bags: "Baskılı Poşetler",
+        color_standard: "Standart",
+        color_black: "Siyah",
+        color_brown: "Kahverengi",
+        color_gold: "Altın",
+        color_white_silver: "Beyaz Gümüş",
+        color_see_through: "Şeffaf",
         
         // Home Page
         hero_title: "10 Numara Ambalaj",
@@ -67,6 +77,7 @@ const translations = {
     en: {
         // Navigation
         home: "Home",
+        catalog: "Catalog",
         products: "Products",
         about: "About",
         contact: "Contact",
@@ -74,6 +85,15 @@ const translations = {
         // Common
         call_now: "Call Now",
         phone_orders: "Orders are only taken by phone",
+        all: "All",
+        unprinted_bags: "Unprinted Bags",
+        printed_bags: "Printed Bags",
+        color_standard: "Standard",
+        color_black: "Black",
+        color_brown: "Brown",
+        color_gold: "Gold",
+        color_white_silver: "White Silver",
+        color_see_through: "See Through",
         
         // Home Page
         hero_title: "10 Number Packaging",
@@ -101,8 +121,8 @@ const translations = {
         industrial_bag_desc: "Durable stretch bags for industrial use",
         video_bag: "Video Product",
         video_bag_desc: "Watch to see our production process",
-        gift_bag: "Ambalaj",
-        gift_bag_desc: "Ambalaj bags for special occasions",
+        gift_bag: "Gift Bag",
+        gift_bag_desc: "Gift bags for special occasions",
         
         // Contact Page
         contact_title: "Contact",
@@ -131,6 +151,7 @@ const translations = {
     ar: {
         // Navigation
         home: "الرئيسية",
+        catalog: "الكتالوج",
         products: "المنتجات",
         about: "من نحن",
         contact: "اتصل بنا",
@@ -138,6 +159,15 @@ const translations = {
         // Common
         call_now: "اتصل الآن",
         phone_orders: "يتم أخذ الطلبات عبر الهاتف فقط",
+        all: "الكل",
+        unprinted_bags: "اكياس غير مطبوعة",
+        printed_bags: "اكياس مطبوعة",
+        color_standard: "عادي",
+        color_black: "أسود",
+        color_brown: "بني",
+        color_gold: "ذهبي",
+        color_white_silver: "أبيض فضي",
+        color_see_through: "شفاف",
         
         // Home Page
         hero_title: "10 رقم التغليف",
@@ -231,10 +261,10 @@ window.setLanguage = function(lang) {
     });
 
     // Update language selector
-    const selector = document.getElementById('language-selector');
-    if (selector) {
+    const selectors = document.querySelectorAll('.language-selector select');
+    selectors.forEach(selector => {
         selector.value = lang;
-    }
+    });
 }
 
 // Initialize language on page load
