@@ -1,5 +1,7 @@
-// Initialize AOS
-AOS.init();
+// Initialize AOS if it exists
+if (typeof AOS !== 'undefined') {
+    AOS.init();
+}
 
 // (Mobile menu logic is initialized at the bottom of this file)
 
