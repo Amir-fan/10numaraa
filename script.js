@@ -1,32 +1,7 @@
-﻿// Initialize AOS
+// Initialize AOS
 AOS.init();
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-        
-        // Close mobile menu when pressing escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                mobileMenu.classList.remove('active');
-            }
-        });
-    }
-});
+// (Mobile menu logic is initialized at the bottom of this file)
 
 // Sidebar functionality
 function toggleSidebar() {
