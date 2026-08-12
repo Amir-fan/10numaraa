@@ -1,5 +1,10 @@
 const catalogItems2 = [
     {
+        "src": "katalog2/اكياس غير مطبوعة (8) brown.jpeg",
+        "category": "اكياس مطبوعة",
+        "details": "printed"
+    },
+    {
         "src": "katalog2/اكياس مطبوعة (1).jpeg",
         "category": "اكياس مطبوعة",
         "details": "printed"
