@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Numara Ambalaj - Plastik Poşet Baskı</title>
-    <meta name="description"
-        content="10 Numara Ambalaj - Profesyonel plastik poşet baskı hizmetleri. Yüksek kaliteli, özel tasarım poşetler için hemen iletişime geçin.">
-    <meta name="keywords"
-        content="plastik poşet, poşet baskı, ambalaj, özel tasarım poşet, plastik ambalaj, 10 numara ambalaj, mersin plastik poşet">
+    <title data-translate="page_title_home">10 Numara Ambalaj - Plastik Poşet Baskı</title>
+    <meta name="description" content="10 Numara Ambalaj - Profesyonel plastik poşet baskı hizmetleri. Yüksek kaliteli, özel tasarım poşetler için hemen iletişime geçin.">
+    <meta name="keywords" content="plastik poşet, poşet baskı, ambalaj, özel tasarım poşet, plastik ambalaj, 10 numara ambalaj, mersin plastik poşet">
     <meta name="author" content="10 Numara Ambalaj">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="10 Numara Ambalaj - Plastik Poşet Baskı">
-    <meta property="og:description"
-        content="Profesyonel plastik poşet baskı hizmetleri. Yüksek kaliteli, özel tasarım poşetler için hemen iletişime geçin.">
+    <meta property="og:description" content="Profesyonel plastik poşet baskı hizmetleri. Yüksek kaliteli, özel tasarım poşetler için hemen iletişime geçin.">
     <meta property="og:image" content="images/logo-gold.png">
     <meta property="og:url" content="https://10numaraambalaj.com">
     <meta property="og:type" content="website">
@@ -21,8 +17,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -48,45 +43,48 @@
         }
     }
     </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Loading Animation -->
-    <div class="loader">
-        <div class="spinner"></div>
-    </div>
-
     <!-- Navbar -->
     <div class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
-                    <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
-                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
-                    <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
-                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="window.setLanguage(this.value)">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
+            <div class="nav-inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
+                
+                
+                <div class="custom-lang-selector">
+                    <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                        <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon" style="font-size: 10px; margin-left:4px;"></i>
+                    </div>
+                    <ul class="lang-menu">
+                        <li onclick="selectLanguage('tr')">Türkçe</li>
+                        <li onclick="selectLanguage('en')">English</li>
+                        <li onclick="selectLanguage('ar')">العربية</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
     </div>
 
     <!-- Mobile Menu -->
@@ -95,100 +93,170 @@
             <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
             <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
             <li><a href="products.html" data-translate="products">Ürünler</a></li>
-            <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
             <li><a href="contact.html" data-translate="contact">İletişim</a></li>
         </ul>
-        <div class="language-selector">
-            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+        
     </div>
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <h1 data-translate="welcome">Ambalajda Kaliteyi Yeniden Tanımlayın!</h1>
-                    <p data-translate="welcome_message">Başarı her zaman büyüklükle ilgili değildir. Tutarlılıkla
-                        ilgilidir. Kaliteli üretim ve sürekli gelişim başarıyı getirir.</p>
-                    <a href="products.html" class="btn" data-translate="explore_now">Hemen Keşfet &#8594;</a>
-                </div>
-                <div class="col-2">
-                    <img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo">
+        <div class="hero-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: url('images/hero image.png'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; transition: transform 0.3s ease;"></div>
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(250, 248, 244, 0.9) 0%, rgba(250, 248, 244, 0.4) 100%); z-index: 1;"></div>
+        <img src="images/leaf_edge.png" alt="Leaf Decoration" class="hero-bg-leaves" style="z-index: 2;">
+        <div class="container" style="position: relative; z-index: 3; display: block;">
+            <div class="hero-content" data-aos="fade-up" style="max-width: 600px; padding: 40px 0;">
+                <div class="eyebrow" data-translate="printed_packaging_solutions">BASKILI AMBALAJ ÇÖZÜMLERİ</div>
+                <h1 class="heading-lg" data-translate="hero_headline">Ambalajınız,<br>ürününüzden<br>önce konuşur.</h1>
+                <p class="text-lg" data-translate="welcome_message">Özel baskılı ambalaj çözümleriyle markanızı öne çıkarıyoruz. Kalite ve güvenle üretiyoruz.</p>
+                <div class="hero-actions">
+                    <a href="products.html" class="btn btn-primary" data-translate="explore_products">Ürünleri Keşfet &rarr;</a>
+                    <a href="catalog.html" class="btn btn-link" data-translate="review_catalog">Kataloğu İncele &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="title">
-                <h2 data-translate="our_products">Ürünlerimiz</h2>
-                <p data-translate="product_details">En kaliteli plastik poşet çözümleri</p>
+    <!-- Hero Benefit Strip -->
+    <div class="container">
+        <div class="benefit-strip" data-aos="fade-up" data-aos-offset="-100">
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-box-open"></i></div>
+                <div class="benefit-label" data-translate="benefit_1">Özel Baskılı Üretim</div>
             </div>
-            <div class="row">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/product-0.png" alt="Market Poşeti">
-                    <div class="product-info">
-                        <h3 data-translate="market_bag">Market Poşeti</h3>
-                        <p data-translate="market_bag_desc">Yüksek kaliteli, dayanıklı market poşetleri</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-bullseye"></i></div>
+                <div class="benefit-label" data-translate="benefit_2">Yüksek Baskı Kalitesi</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+                <div class="benefit-label" data-translate="benefit_3">Sürdürülebilir Üretim</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-truck-fast"></i></div>
+                <div class="benefit-label" data-translate="benefit_4">Hızlı Teslimat</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Us Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="why-us-header" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow" data-translate="why_us">NEDEN BİZ?</div>
+                    <h2 class="heading-md" data-translate="why_us_headline">Ambalajda Kalite,<br>Her Adımda Güven.</h2>
+                </div>
+                <p class="text-lg" data-translate="why_us_desc">Modern üretim altyapımız, deneyimli ekibimiz ve müşteri odaklı yaklaşımımızla markanıza değer katıyoruz.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <h3 class="feature-title" data-translate="benefit_1">Özel Baskılı Üretim</h3>
+                    <p class="feature-desc" data-translate="feature_1_desc">Markanızın kimliğine uygun, özel tasarım ve baskı çözümleri.</p>
+                    <img src="images/category-1.jpg" alt="Özel Baskılı Üretim" class="feature-image">
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h3 class="feature-title" data-translate="benefit_2">Yüksek Baskı Kalitesi</h3>
+                    <p class="feature-desc" data-translate="feature_2_desc">Canlı renkler, net detaylar ve dayanıklı baskı teknolojisi.</p>
+                    <img src="katalog2/اكياس مطبوعة (1).jpeg" alt="Yüksek Baskı Kalitesi" class="feature-image">
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                    <h3 class="feature-title" data-translate="benefit_3">Sürdürülebilir Üretim</h3>
+                    <p class="feature-desc" data-translate="feature_3_desc">Çevreye duyarlı malzemelerle doğaya saygılı üretim.</p>
+                    <img src="images/sustainability_realistic.png" alt="Sürdürülebilir Üretim" class="feature-image">
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                    <h3 class="feature-title" data-translate="benefit_4">Hızlı Teslimat</h3>
+                    <p class="feature-desc" data-translate="feature_4_desc">Zamanında üretim ve güvenilir lojistik ile hızlı teslimat.</p>
+                    <img src="images/fast_delivery_realistic.png" alt="Hızlı Teslimat" class="feature-image">
+                </div>
+            </div>
+            
+            <div class="why-us-cta" data-aos="fade-up">
+                <a href="about.html" class="btn btn-primary" data-translate="explore_advantages">Tüm Avantajlarımızı Keşfet &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <section class="section-padding" style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div class="products-header" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow" data-translate="featured_products_eyebrow">ÖNE ÇIKAN ÜRÜNLER</div>
+                    <h2 class="heading-md" data-translate="pack_quality">Kaliteyi Ambalajlıyoruz.</h2>
+                </div>
+                <p class="text-lg" data-translate="products_desc">Farklı sektörlere özel geliştirdiğimiz ambalaj çözümlerimizi keşfedin. Kaliteli baskı, güçlü malzeme ve estetik tasarım bir arada.</p>
+                <div>
+                    <a href="products.html" class="btn btn-link" data-translate="see_all_products" style="background:var(--bg-main); border-radius:var(--radius-full); padding: 12px 24px;">Tüm Ürünleri Gör &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="carousel-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="carousel-control carousel-prev" onclick="scrollCarousel(-1)"><i class="fas fa-chevron-left"></i></div>
+                <div class="carousel-control carousel-next" onclick="scrollCarousel(1)"><i class="fas fa-chevron-right"></i></div>
+                
+                <div class="product-carousel" id="productCarousel">
+                    <div class="product-card">
+                        <div class="image-wrapper"><img src="images/product-0.png" alt="Baskılı Poşet"></div>
+                        <h3 class="product-title" data-translate="printed_bag">Baskılı Poşet</h3>
+                        <p class="product-desc" data-translate="printed_bag_desc">Yüksek kaliteli baskı ile markanızı her yerde öne çıkarın.</p>
+                        <span class="product-category" data-translate="cat_market">Market / Mağaza</span>
+                    </div>
+                    <div class="product-card">
+                        <div class="image-wrapper"><img src="images/product-1.png" alt="Baharat Ambalajı"></div>
+                        <h3 class="product-title" data-translate="spice_pack">Baharat Ambalajı</h3>
+                        <p class="product-desc" data-translate="spice_pack_desc">Aromayı koruyan özel laminasyonlu baharat ambalajları.</p>
+                        <span class="product-category" data-translate="cat_spice">Baharat</span>
+                    </div>
+                    <div class="product-card">
+                        <div class="image-wrapper"><img src="images/product-2.png" alt="Kuruyemiş Ambalajı"></div>
+                        <h3 class="product-title" data-translate="nuts_pack">Kuruyemiş Ambalajı</h3>
+                        <p class="product-desc" data-translate="nuts_pack_desc">Dayanıklı doypack ambalajlarla tazeliği ve çıtırlığı korur.</p>
+                        <span class="product-category" data-translate="cat_nuts">Kuruyemiş</span>
+                    </div>
+                    <div class="product-card">
+                        <div class="image-wrapper"><img src="images/product-3.png" alt="Tohum Ambalajı"></div>
+                        <h3 class="product-title" data-translate="seed_pack">Tohum Ambalajı</h3>
+                        <p class="product-desc" data-translate="seed_pack_desc">Gıda güvenliğine uygun malzemelerle uzun ömürlü koruma sağlar.</p>
+                        <span class="product-category" data-translate="cat_seed">Tohum</span>
                     </div>
                 </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/product-1.png" alt="Özel Tasarım Poşet">
-                    <div class="product-info">
-                        <h3 data-translate="custom_bag">Özel Tasarım Poşet</h3>
-                        <p data-translate="custom_bag_desc">Markanıza özel tasarlanmış poşetler</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
+            </div>
+            
+            <div class="credibility-strip" data-aos="fade-up">
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="custom_production">Özel Üretim</strong>
+                        <span data-translate="custom_design_desc">İhtiyacınıza uygun tasarımlar</span>
                     </div>
                 </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/product-2.png" alt="Kurumsal Poşet">
-                    <div class="product-info">
-                        <h3 data-translate="corporate_bag">Kurumsal Poşet</h3>
-                        <p data-translate="corporate_bag_desc">Kurumsal kimliğinizi yansıtan poşetler</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-print"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="flexo_print">Flekso Baskı</strong>
+                        <span data-translate="high_res_print">Yüksek çözünürlüklü kalite</span>
                     </div>
                 </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="images/product-3.png" alt="Promosyon Poşeti">
-                    <div class="product-info">
-                        <h3 data-translate="promo_bag">Promosyon Poşeti</h3>
-                        <p data-translate="promo_bag_desc">Etkinlikleriniz için özel tasarım poşetler</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-recycle"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="multi_material">Çoklu Malzeme</strong>
+                        <span data-translate="durable_structure">PE, PP, Laminasyon</span>
                     </div>
                 </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="images/category-6.jpeg" alt="Baskılı Poşet">
-                    <div class="product-info">
-                        <h3 data-translate="printed_bag">Baskılı Poşet</h3>
-                        <p data-translate="printed_bag_desc">Özel baskılı yüksek kalite poşetler</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="images/category-7.jpeg" alt="Endüstriyel Poşet">
-                    <div class="product-info">
-                        <h3 data-translate="industrial_bag">Endüstriyel Poşet</h3>
-                        <p data-translate="industrial_bag_desc">Endüstriyel kullanım için dayanıklı poşetler</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="images/category-4.jpeg" alt="Hediye Poşeti" class="full-image">
-                    <div class="product-info">
-                        <h3 data-translate="gift_bag">Hediye Poşeti</h3>
-                        <p data-translate="gift_bag_desc">Özel günler için hediye poşetleri</p>
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="quality_control">Kalite Kontrol</strong>
+                        <span data-translate="standart_assurance">Üretim standartları</span>
                     </div>
                 </div>
             </div>
@@ -196,266 +264,228 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section class="section-padding">
         <div class="container">
-            <div class="row">
-                <div class="contact-info">
-                    <h2 data-translate="get_in_touch">İletişime Geçin</h2>
-                    <p data-translate="quality_solutions">Kaliteli ambalaj çözümleri için hemen arayın!</p>
-                    <ul>
-                        <li>
-                            <i class="fas fa-phone"></i>
+            <div class="contact-header" data-aos="fade-up">
+                <div class="eyebrow" style="justify-content: center;" data-translate="get_in_touch_eye">İLETİŞİME GEÇİN</div>
+                <h2 class="heading-lg" data-translate="get_in_touch">Bizimle İletişime Geçin.</h2>
+                <p class="text-lg" style="margin: 0 auto;" data-translate="contact_desc">Siparişleriniz, ürünlerimiz veya iş birliği fırsatları için bizimle iletişime geçmekten mutluluk duyarız.</p>
+            </div>
+            
+            <div class="contact-layout">
+                <!-- Stack -->
+                <div class="contact-stack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="address">Adres</h4>
+                            <p data-translate="contact_city">Mersin, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="working_hours">Çalışma Saatleri</h4>
+                            <p data-translate="work_hours_short">Pzt - Cts: 08:00 - 19:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="phone">Telefon</h4>
                             <a href="tel:+905013668033">+90 (501) 366 80 33</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="email">E-posta</h4>
                             <a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span data-translate="work_hours">Pazartesi - Cumartesi: 08:00 - 19:00</span>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://maps.google.com/maps?q=36.824228,34.658069&z=15&output=embed"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                
+                <!-- Map -->
+                <div class="contact-map" data-aos="fade-up" data-aos-delay="200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.760435833369!2d34.655526675496525!3d36.82426016634348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1527f3d6dd8ab79b%3A0x51dc323f3ef8a790!2sON%20NUMARA%20PLAST%C4%B0K%20AMBALAJ%20OFSET%20EMLAK%20GIDA%20OTOMOT%C4%B0V%20%C4%B0TH.%20%C4%B0HR.%20SAN.%20T%C4%B0C.%20LTD.%20%C5%9ET%C4%B0.!5e0!3m2!1sen!2str!4v1786530772489!5m2!1sen!2str" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <a href="https://maps.app.goo.gl/qJ5yD5wTfXF7wP2c6" target="_blank" class="map-overlay">
+                        <i class="fas fa-location-arrow" style="color:var(--brand-yellow);"></i> 
+                        <div style="display:flex; flex-direction:column;">
+                            <span data-translate="get_directions" style="line-height:1;">Yol Tarifi Al</span>
+                            <span style="font-size:11px; color:var(--text-secondary);" data-translate="open_in_google">Google Haritalar'da Aç</span>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color:var(--text-secondary); margin-left:8px;"></i>
+                    </a>
+                </div>
+                
+                <!-- Form -->
+                <div class="contact-form-container" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-form">
+                        <h3 data-translate="message_us">Bizimle Mesajlaşın</h3>
+                        <p data-translate="message_desc">Tüm soru ve görüşleriniz için bize mesaj gönderebilirsiniz.</p>
+                        
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mesajınız başarıyla gönderildi.');">
+                            <div class="form-group">
+                                <i class="far fa-user"></i>
+                                <input type="text" class="form-control" placeholder="Adınız Soyadınız" data-translate-placeholder="your_name" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" class="form-control" placeholder="E-posta Adresiniz" data-translate-placeholder="your_email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" class="form-control" placeholder="Telefon Numaranız" data-translate-placeholder="your_phone">
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-comment-alt"></i>
+                                <textarea class="form-control" placeholder="Mesajınız" data-translate-placeholder="your_message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="far fa-paper-plane"></i> <span data-translate="send_message">Mesaj Gönder</span>
+                            </button>
+                            <p style="text-align:center; font-size:12px; margin-top:12px; color:var(--text-secondary);" data-translate="contact_soon">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="credibility-strip" data-aos="fade-up" style="margin-top:40px; padding:32px; border-radius:100px;">
+                <div class="cred-item">
+                    <div class="cred-icon" style="color:var(--brand-yellow); background:var(--bg-alt); padding:16px; border-radius:50%; font-size:24px;"><i class="fas fa-headset"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="fast_support" style="font-size:16px;">Hızlı Destek</strong>
+                        <span data-translate="fast_support_desc">Sorularınıza en kısa sürede yanıt veriyoruz.</span>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon" style="color:var(--brand-yellow); background:var(--bg-alt); padding:16px; border-radius:50%; font-size:24px;"><i class="fas fa-truck-fast"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="timely_delivery" style="font-size:16px;">Zamanında Üretim</strong>
+                        <span data-translate="timely_delivery_desc">Söz verilen tarihte teslimat.</span>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon" style="color:var(--brand-yellow); background:var(--bg-alt); padding:16px; border-radius:50%; font-size:24px;"><i class="fas fa-shield-alt"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="reliable_service" style="font-size:16px;">Güvenilir Hizmet</strong>
+                        <span data-translate="reliable_service_desc">Uzun süreli iş ortaklığı garantisi.</span>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon" style="color:var(--brand-yellow); background:var(--bg-alt); padding:16px; border-radius:50%; font-size:24px;"><i class="fas fa-medal"></i></div>
+                    <div class="cred-info">
+                        <strong data-translate="quality_standard" style="font-size:16px;">Kalite Kontrol</strong>
+                        <span data-translate="quality_standard_desc">Yüksek kalite standartlarında üretim.</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-        <button class="lightbox-prev" id="prevBtn">&lt;</button>
-        <button class="lightbox-next" id="nextBtn">&gt;</button>
-    </div>
-
-    <!-- Contact Popup -->
-    <div class="contact-popup" id="contactPopup">
-        <div class="popup-content">
-            <button class="close-popup" id="closePopup">&times;</button>
-            <div class="popup-logo">
-                <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="popup-dev-logo" loading="lazy">
-            </div>
-            <h2>İletişim Bilgileri</h2>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+905379295163" data-translate="dev_phone">+90 537 929 51 63</a>
+    <!-- Part A: Light CTA -->
+    <section class="footer-cta">
+        <div class="cta-watermark">10</div>
+        <div class="container">
+            <div class="footer-cta-layout">
+                <div class="cta-content" data-aos="fade-right">
+                    <div class="eyebrow" data-translate="ready_eyebrow">HAZIR MISINIZ?</div>
+                    <h2 class="heading-lg" style="margin-bottom:32px;" data-translate="produce_together_html">Birlikte<br><span style="color:var(--brand-yellow);">üretelim.</span></h2>
+                    <a href="contact.html" class="btn" style="background:#151515; color:#fff;" data-translate="contact_us_btn">İletişime Geçin &rarr;</a>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:fanarilabs@gmail.com" data-translate="dev_email">fanarilabs@gmail.com</a>
+                <div class="cta-contacts" data-aos="fade-left">
+                    <div class="cta-contact-item">
+                        <h5 data-translate="phone_whatsapp">Telefon / WhatsApp</h5>
+                        <p>+90 (501) 366 80 33</p>
+                    </div>
+                    <div class="cta-contact-item" style="border-left: 1px solid rgba(0,0,0,0.1); padding-left:40px;">
+                        <h5 data-translate="email">E-posta</h5>
+                        <p>on.numara.plastik@gmail.com</p>
+                    </div>
+                    <div class="cta-contact-item" style="border-left: 1px solid rgba(0,0,0,0.1); padding-left:40px;">
+                        <h5 data-translate="address">Adres</h5>
+                        <p data-translate="contact_city">Mersin, Türkiye</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Part B: Dark Footer -->
+    <footer class="footer-dark">
         <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h3 data-translate="about_us">Hakkımızda</h3>
-                    <p data-translate="about_us_desc">10 Numara Ambalaj olarak, yüksek kaliteli plastik poşet
-                        çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/logo-gold.png" alt="10 Numara Ambalaj" style="height:48px;">
+                    <p data-translate="footer_desc">Yüksek kaliteli baskılı esnek ambalaj çözümleri ile markanızı bir adım öne taşıyoruz.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate="quick_links">Hızlı Linkler</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="quick_links">HIZLI LİNKLER</h4>
                     <ul>
                         <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
                         <li><a href="products.html" data-translate="products">Ürünler</a></li>
                         <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate="contact">İletişim</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="product_categories">ÜRÜN KATEGORİLERİ</h4>
                     <ul>
-                        <li><a href="tel:+905013668033">+90 (501) 366 80 33</a></li>
-                        <li><a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a></li>
+                        <li><a href="products.html" data-translate="cat_spice">Baharat Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_nuts">Kuruyemiş Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_seed">Tohum Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_market">Baskılı Poşetler</a></li>
+                        <li><a href="products.html" data-translate="cat_custom">Özel Tasarım Ambalajlar</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate="social_media">Sosyal Medya</h3>
-                    <ul>
-                        <li><a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank">TikTok</a></li>
-                    </ul>
+                
+                <div class="footer-feature">
+                    <img src="images/footer_machinery.png" alt="Machinery" class="footer-feature-img">
+                    <div class="footer-feature-text">
+                        <h3 data-translate="quality_print">Kaliteli Baskı,<br><span style="color:var(--brand-yellow);" data-translate="strong_brand">Güçlü Marka.</span></h3>
+                        <p data-translate="feature_footer_desc">Modern üretim altyapımız ile her gün daha iyisini üretiyoruz.</p>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p data-translate="rights_reserved">&copy; 10 numara ambalaj. Tüm hakları saklıdır.</p>
-                <div class="dev-tag">
-                    <a href="#" id="devContact" data-translate="developed_by">
-                        <div class="dev-logo-container">
-                            <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="dev-logo" loading="lazy">
-                        </div>
-                    </a>
+                <div data-translate="rights_reserved">&copy; 2026 10 Numara Ambalaj. Tüm hakları saklıdır.</div>
+                <div class="footer-lang">
+                    <a href="#" onclick="selectLanguage('tr')" class="active">TR</a> | 
+                    <a href="#" onclick="selectLanguage('en')">EN</a> | 
+                    <a href="#" onclick="selectLanguage('ar')">AR</a>
+                </div>
+                <div class="footer-dev">
+                    <span data-translate="dev_by">Web Tasarım & Yazılım:</span> <button id="fanariDevBtn" style="background:none; border:none; color:var(--brand-yellow); font-family:inherit; font-size:inherit; cursor:pointer; font-weight:600; padding:4px 8px; border-radius:4px; transition:all 0.2s;"><span data-translate="fanari_btn">Fanari Labs - Tıkla ve İletişime Geç</span></button>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("active");
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener("click", function (e) {
-            const mobileMenu = document.getElementById("mobileMenu");
-            const menuToggle = document.querySelector(".menu-toggle");
-
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("active")) {
-                mobileMenu.classList.remove("active");
-            }
-        });
-
-        // Close mobile menu on escape key
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") {
-                const mobileMenu = document.getElementById("mobileMenu");
-                mobileMenu.classList.remove("active");
-            }
-        });
-
-        // Loading Animation
-        window.addEventListener('load', function () {
-            const loader = document.querySelector('.loader');
-            loader.classList.add('fade-out');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        // Contact Popup Functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const devContact = document.getElementById('devContact');
-            const contactPopup = document.getElementById('contactPopup');
-            const closePopup = document.getElementById('closePopup');
-
-            if (devContact && contactPopup && closePopup) {
-                devContact.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    contactPopup.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                });
-
-                closePopup.addEventListener('click', function () {
-                    contactPopup.style.display = 'none';
-                    document.body.style.overflow = '';
-                });
-
-                contactPopup.addEventListener('click', function (e) {
-                    if (e.target === contactPopup) {
-                        contactPopup.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-
-                document.addEventListener('keydown', function (e) {
-                    if (e.key === 'Escape' && contactPopup.style.display === 'flex') {
-                        contactPopup.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-        });
-
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const closeBtn = document.querySelector('.close-lightbox');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentImageIndex = 0;
-        const galleryImages = document.querySelectorAll('.product-card img');
-
-        // Open lightbox
-        galleryImages.forEach((img, index) => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                currentImageIndex = index;
-                updateLightbox();
-                lightbox.style.display = 'flex';
-            });
-        });
-
-        // Close lightbox
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        // Close on outside click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-
-        // Previous image
-        prevBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-            updateLightbox();
-        });
-
-        // Next image
-        nextBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-            updateLightbox();
-        });
-
-        // Update lightbox content
-        function updateLightbox() {
-            const currentImg = galleryImages[currentImageIndex];
-            lightboxImg.src = currentImg.src;
-            lightboxCaption.textContent = currentImg.alt;
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'ArrowLeft') {
-                    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-                } else if (e.key === 'ArrowRight') {
-                    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-                } else if (e.key === 'Escape') {
-                    lightbox.style.display = 'none';
-                }
-                updateLightbox();
-            }
-        });
-    </script>
+    <!-- Fanari Labs Dev Popup -->
+    <div class="dev-popup" id="devPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:none; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease;">
+        <div class="dev-popup-content" style="background:#151515; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; width:90%; max-width:400px; text-align:center; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.5); transform:translateY(20px); transition:transform 0.3s ease;">
+            <button id="closeDevPopup" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#888; font-size:24px; cursor:pointer;">&times;</button>
+            <h3 style="color:#fff; font-size:24px; margin-bottom:8px;" data-translate="fanari_title">Fanari Labs</h3>
+            <p style="color:#888; font-size:14px; margin-bottom:32px;" data-translate="fanari_desc">Modern Web Teknolojileri ve Tasarım Ajansı</p>
+            
+            <div style="display:flex; flex-direction:column; gap:16px;">
+                <a href="tel:+905379295163" style="display:flex; align-items:center; justify-content:center; gap:12px; background:rgba(255,255,255,0.05); color:#fff; padding:16px; border-radius:12px; transition:all 0.2s; border:1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-phone" style="color:var(--brand-yellow);"></i>
+                    <span style="font-weight:500; font-size:16px;">+90 537 929 51 63</span>
+                </a>
+                <a href="https://fanarilabs.com" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:12px; background:var(--brand-yellow); color:#151515; padding:16px; border-radius:12px; transition:all 0.2s; font-weight:600;">
+                    <i class="fas fa-globe"></i>
+                    <span style="font-size:16px;">fanarilabs.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>

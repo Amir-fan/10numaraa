@@ -1,51 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | 10 Numara Ambalaj</title>
+    <title data-translate="page_title_contact">İletişim | 10 Numara Ambalaj</title>
     <meta name="description" content="10 Numara Ambalaj ile iletişime geçin. Plastik poşet baskı hizmetleri için hemen arayın.">
     <meta name="keywords" content="plastik poşet, poşet baskı, ambalaj, iletişim, 10 numara ambalaj">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="loader">
-        <div class="spinner"></div>
-    </div>
-
     <!-- Navbar -->
     <div class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
-                    <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
-                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
-                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="setLanguage(this.value)">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
+            <div class="nav-inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" class="active" data-translate="contact">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
+                
+                
+                <div class="custom-lang-selector">
+                    <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                        <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon" style="font-size: 10px; margin-left:4px;"></i>
+                    </div>
+                    <ul class="lang-menu">
+                        <li onclick="selectLanguage('tr')">Türkçe</li>
+                        <li onclick="selectLanguage('en')">English</li>
+                        <li onclick="selectLanguage('ar')">العربية</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
     </div>
 
     <!-- Mobile Menu -->
@@ -54,229 +60,186 @@
             <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
             <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
             <li><a href="products.html" data-translate="products">Ürünler</a></li>
-            <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+            <li><a href="contact.html" class="active" data-translate="contact">İletişim</a></li>
         </ul>
-        <div class="language-selector">
-            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+        
     </div>
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="section-padding" style="padding-top: 180px;">
         <div class="container">
-            <div class="title">
-                <h2>İletişim</h2>
-                <p>Bizimle iletişime geçin</p>
+            <div class="contact-header">
+                <div class="eyebrow" style="justify-content: center;" data-translate="get_in_touch_eye">İLETİŞİME GEÇİN</div>
+                <h2 class="heading-lg" data-translate="get_in_touch">Bizimle İletişime Geçin.</h2>
+                <p class="text-lg" style="margin: 0 auto; text-align: center; margin-bottom: 24px;" data-translate="contact_desc">Siparişleriniz, ürünlerimiz veya iş birliği fırsatları için bizimle iletişime geçmekten mutluluk duyarız.</p>
+                <div style="display: flex; justify-content: center; margin-bottom: 60px;">
+                    <span style="background: var(--bg-alt); padding: 8px 16px; border-radius: var(--radius-full); font-size: 14px; font-weight: 500; color: var(--brand-yellow); border: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-info-circle"></i> <span data-translate="phone_orders">Siparişler sadece telefon üzerinden alınır</span>
+                    </span>
+                </div>
             </div>
-
-            <div class="notice">
-                <i class="fas fa-phone"></i>
-                <span>Siparişler sadece telefon üzerinden alınır</span>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Telefon</h3>
-                        <p><a href="tel:+905013668033">+90 (501) 366 80 33</a></p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>E-posta</h3>
-                        <p><a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a></p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Çalışma Saatleri</h3>
-                        <div class="work-hours">
-                            <p>Pazartesi - Cumartesi: 08:00 - 19:00</p>
-                            <p>Pazar: Kapalı</p>
+            
+            <div class="contact-layout">
+                <!-- Stack -->
+                <div class="contact-stack">
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="address">Adres</h4>
+                            <p data-translate="contact_city">Mersin, Türkiye</p>
                         </div>
                     </div>
-                    <div class="info-card">
-                        <i class="fas fa-share-alt"></i>
-                        <h3>Sosyal Medya</h3>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank" class="social-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank" class="social-link">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="working_hours">Çalışma Saatleri</h4>
+                            <p data-translate="work_hours_short">Pzt - Cts: 08:00 - 19:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="phone">Telefon</h4>
+                            <a href="tel:+905013668033">+90 (501) 366 80 33</a>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="contact-panel-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-panel-info">
+                            <h4 data-translate="email">E-posta</h4>
+                            <a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Map -->
-                <div class="map-container">
-                    <h3>Konum</h3>
-                    <div class="map">
-                        <iframe src="https://maps.google.com/maps?q=36.824228,34.658069&z=15&output=embed" 
-                                width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.760435833369!2d34.655526675496525!3d36.82426016634348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1527f3d6dd8ab79b%3A0x51dc323f3ef8a790!2sON%20NUMARA%20PLAST%C4%B0K%20AMBALAJ%20OFSET%20EMLAK%20GIDA%20OTOMOT%C4%B0V%20%C4%B0TH.%20%C4%B0HR.%20SAN.%20T%C4%B0C.%20LTD.%20%C5%9ET%C4%B0.!5e0!3m2!1sen!2str!4v1786530772489!5m2!1sen!2str" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <a href="https://maps.app.goo.gl/qJ5yD5wTfXF7wP2c6" target="_blank" class="map-overlay">
+                        <i class="fas fa-location-arrow" style="color:var(--brand-yellow);"></i> 
+                        <div style="display:flex; flex-direction:column;">
+                            <span data-translate="get_directions" style="line-height:1;">Yol Tarifi Al</span>
+                            <span style="font-size:11px; color:var(--text-secondary);" data-translate="open_in_google">Google Haritalar'da Aç</span>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color:var(--text-secondary); margin-left:8px;"></i>
+                    </a>
+                </div>
+                
+                <!-- Form -->
+                <div class="contact-form-container">
+                    <div class="contact-form">
+                        <h3 data-translate="message_us">Bizimle Mesajlaşın</h3>
+                        <p data-translate="message_desc">Tüm soru ve görüşleriniz için bize mesaj gönderebilirsiniz.</p>
+                        
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mesajınız başarıyla gönderildi.');">
+                            <div class="form-group">
+                                <i class="far fa-user"></i>
+                                <input type="text" class="form-control" placeholder="Adınız Soyadınız" data-translate-placeholder="your_name" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" class="form-control" placeholder="E-posta Adresiniz" data-translate-placeholder="your_email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" class="form-control" placeholder="Telefon Numaranız" data-translate-placeholder="your_phone">
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-comment-alt"></i>
+                                <textarea class="form-control" placeholder="Mesajınız" data-translate-placeholder="your_message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="far fa-paper-plane"></i> <span data-translate="send_message">Mesaj Gönder</span>
+                            </button>
+                            <p style="text-align:center; font-size:12px; margin-top:12px; color:var(--text-secondary);" data-translate="contact_soon">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Contact Popup -->
-    <div class="contact-popup" id="contactPopup">
-        <div class="popup-content">
-            <button class="close-popup" id="closePopup">&times;</button>
-            <div class="popup-logo">
-                <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="popup-dev-logo" loading="lazy">
-            </div>
-            <h2>İletişim Bilgileri</h2>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+905379295163">+90 537 929 51 63</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:fanarilabs@gmail.com">fanarilabs@gmail.com</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Dark Footer -->
+    <footer class="footer-dark" style="margin-top: 0;">
         <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h3>Hakkımızda</h3>
-                    <p>10 Numara Ambalaj olarak, yüksek kaliteli plastik poşet çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/logo-gold.png" alt="10 Numara Ambalaj" style="height:48px;">
+                    <p data-translate="footer_desc">Yüksek kaliteli baskılı esnek ambalaj çözümleri ile markanızı bir adım öne taşıyoruz.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Hızlı Linkler</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="quick_links">HIZLI LİNKLER</h4>
                     <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="products.html">Ürünler</a></li>
-                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>İletişim</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="product_categories">ÜRÜN KATEGORİLERİ</h4>
                     <ul>
-                        <li><a href="tel:+905013668033">+90 (501) 366 80 33</a></li>
-                        <li><a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a></li>
+                        <li><a href="products.html" data-translate="cat_spice">Baharat Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_nuts">Kuruyemiş Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_seed">Tohum Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_market">Baskılı Poşetler</a></li>
+                        <li><a href="products.html" data-translate="cat_custom">Özel Tasarım Ambalajlar</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Sosyal Medya</h3>
-                    <ul>
-                        <li><a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank">TikTok</a></li>
-                    </ul>
+                
+                <div class="footer-feature">
+                    <img src="images/footer_machinery.png" alt="Machinery" class="footer-feature-img">
+                    <div class="footer-feature-text">
+                        <h3 data-translate="quality_print">Kaliteli Baskı,<br><span style="color:var(--brand-yellow);" data-translate="strong_brand">Güçlü Marka.</span></h3>
+                        <p data-translate="feature_footer_desc">Modern üretim altyapımız ile her gün daha iyisini üretiyoruz.</p>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 10 numara ambalaj. Tüm hakları saklıdır.</p>
-                <div class="dev-tag">
-                    <a href="#" id="devContact">
-                        <div class="dev-logo-container">
-                            <img src="images/fanaridev.png" alt="Fanari Dev Logo" class="dev-logo" loading="lazy">
-                        </div>
-                        <span>Fanari Lab Tarafından Geliştirildi, iletişim icin tıklayınız</span>
-                    </a>
+                <div data-translate="rights_reserved">&copy; 2026 10 Numara Ambalaj. Tüm hakları saklıdır.</div>
+                <div class="footer-lang">
+                    <a href="#" onclick="selectLanguage('tr')" class="active">TR</a> | 
+                    <a href="#" onclick="selectLanguage('en')">EN</a> | 
+                    <a href="#" onclick="selectLanguage('ar')">AR</a>
+                </div>
+                <div class="footer-dev">
+                    <span data-translate="dev_by">Web Tasarım & Yazılım:</span> <button id="fanariDevBtn" style="background:none; border:none; color:var(--brand-yellow); font-family:inherit; font-size:inherit; cursor:pointer; font-weight:600; padding:4px 8px; border-radius:4px; transition:all 0.2s;"><span data-translate="fanari_btn">Fanari Labs - Tıkla ve İletişime Geç</span></button>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("active");
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener("click", function(e) {
-            const mobileMenu = document.getElementById("mobileMenu");
-            const menuToggle = document.querySelector(".menu-toggle");
+    <!-- Fanari Labs Dev Popup -->
+    <div class="dev-popup" id="devPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:none; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease;">
+        <div class="dev-popup-content" style="background:#151515; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; width:90%; max-width:400px; text-align:center; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.5); transform:translateY(20px); transition:transform 0.3s ease;">
+            <button id="closeDevPopup" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#888; font-size:24px; cursor:pointer;">&times;</button>
+            <h3 style="color:#fff; font-size:24px; margin-bottom:8px;" data-translate="fanari_title">Fanari Labs</h3>
+            <p style="color:#888; font-size:14px; margin-bottom:32px;" data-translate="fanari_desc">Modern Web Teknolojileri ve Tasarım Ajansı</p>
             
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("active")) {
-                mobileMenu.classList.remove("active");
-            }
-        });
+            <div style="display:flex; flex-direction:column; gap:16px;">
+                <a href="tel:+905379295163" style="display:flex; align-items:center; justify-content:center; gap:12px; background:rgba(255,255,255,0.05); color:#fff; padding:16px; border-radius:12px; transition:all 0.2s; border:1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-phone" style="color:var(--brand-yellow);"></i>
+                    <span style="font-weight:500; font-size:16px;">+90 537 929 51 63</span>
+                </a>
+                <a href="https://fanarilabs.com" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:12px; background:var(--brand-yellow); color:#151515; padding:16px; border-radius:12px; transition:all 0.2s; font-weight:600;">
+                    <i class="fas fa-globe"></i>
+                    <span style="font-size:16px;">fanarilabs.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-        // Close mobile menu on escape key
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") {
-                const mobileMenu = document.getElementById("mobileMenu");
-                mobileMenu.classList.remove("active");
-            }
-        });
-
-        // Loading Animation
-        window.addEventListener('load', function() {
-            const loader = document.querySelector('.loader');
-            loader.classList.add('fade-out');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Contact Popup Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const devContact = document.getElementById('devContact');
-            const contactPopup = document.getElementById('contactPopup');
-            const closePopup = document.getElementById('closePopup');
-
-            if (devContact && contactPopup && closePopup) {
-                devContact.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    contactPopup.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                });
-
-                closePopup.addEventListener('click', function() {
-                    contactPopup.style.display = 'none';
-                    document.body.style.overflow = '';
-                });
-
-                contactPopup.addEventListener('click', function(e) {
-                    if (e.target === contactPopup) {
-                        contactPopup.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && contactPopup.style.display === 'flex') {
-                        contactPopup.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-        });
-    </script>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank" style="position:fixed; bottom:24px; right:24px; background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; box-shadow:var(--shadow-hover); z-index:999; transition:var(--transition-snappy);">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>

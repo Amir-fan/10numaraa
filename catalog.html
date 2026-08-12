@@ -1,265 +1,90 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Numara Ambalaj - Katalog</title>
-    <meta name="description"
-        content="10 Numara Ambalaj - Katalog">
+    <title data-translate="page_title_catalog">10 Numara Ambalaj - Katalog</title>
+    <meta name="description" content="10 Numara Ambalaj - Katalog">
     <meta name="author" content="10 Numara Ambalaj">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Removed AOS CSS for this page for cleaner custom animations -->
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
     <script src="catalog-data.js"></script>
     <script src="catalog2-data.js"></script>
-    <style>
-        .catalog-section {
-            padding: 140px 0 80px;
-            min-height: 100vh;
-            background: linear-gradient(to bottom, #121212, #181818);
-        }
-        
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 12px 30px;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            backdrop-filter: blur(5px);
-        }
-
-        .filter-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.5);
-            color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--black);
-            border-color: transparent;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
-            font-weight: 600;
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        @media (max-width: 1200px) {
-            .catalog-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .catalog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .catalog-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            .filters {
-                gap: 10px;
-            }
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-        }
-
-        .catalog-item {
-            border-radius: 20px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            aspect-ratio: 4/5;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUpIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes fadeUpIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .catalog-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12), 0 0 15px rgba(212, 175, 55, 0.05);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .catalog-item img:not(.item-logo) {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            transition: transform 0.8s ease;
-        }
-        
-        .catalog-item:hover img:not(.item-logo) {
-            transform: scale(1.05);
-        }
-
-        /* Sub-details overlay (optional, currently hidden but ready if text is needed) */
-        .catalog-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-        }
-        
-        .catalog-item:hover::after {
-            opacity: 1;
-        }
-
-        .color-divider {
-            grid-column: 1 / -1;
-            display: flex;
-            align-items: center;
-            margin: 40px 0 20px;
-            opacity: 0;
-            animation: fadeUpIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-
-        .color-divider::before,
-        .color-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.05));
-        }
-
-        .color-divider span {
-            padding: 0 20px;
-            color: var(--gold);
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            text-transform: capitalize;
-            letter-spacing: 1px;
-        }
-
-        .item-logo {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            width: 65px;
-            height: auto;
-            opacity: 0.8;
-            z-index: 10;
-            pointer-events: none;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-    </style>
 </head>
-
 <body>
-    <!-- Loading Animation -->
-    <div class="loader">
-        <div class="spinner"></div>
-    </div>
-
     <!-- Navbar -->
     <div class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
-                    <li><a href="catalog.html" data-translate="catalog" class="active">Katalog</a></li>
-                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
-                    <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
-                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="window.setLanguage(this.value)">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
+            <div class="nav-inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" class="active" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
+                
+                
+                <div class="custom-lang-selector">
+                    <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                        <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon" style="font-size: 10px; margin-left:4px;"></i>
+                    </div>
+                    <ul class="lang-menu">
+                        <li onclick="selectLanguage('tr')">Türkçe</li>
+                        <li onclick="selectLanguage('en')">English</li>
+                        <li onclick="selectLanguage('ar')">العربية</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
     </div>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
-            <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+            <li><a href="catalog.html" class="active" data-translate="catalog">Katalog</a></li>
             <li><a href="products.html" data-translate="products">Ürünler</a></li>
-            <li><a href="about.html" data-translate="about">Hakkımızda</a></li>
             <li><a href="contact.html" data-translate="contact">İletişim</a></li>
         </ul>
-        <div class="language-selector">
-            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+        
     </div>
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
     <section class="catalog-section">
         <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="eyebrow" style="justify-content: center;" data-translate="catalog">KATALOG</div>
+                <h1 class="heading-lg" data-translate="our_products">Ürünlerimiz</h1>
+                <p class="text-lg" style="margin: 0 auto;" data-translate="quality_solutions">Kaliteli ve dayanıklı plastik poşet çözümlerimiz</p>
+            </div>
+
             <div class="filters" id="catalog-filters">
                 <button class="filter-btn active" data-filter="اكياس غير مطبوعة" data-translate="unprinted_bags">اكياس غير مطبوعة</button>
                 <button class="filter-btn" data-filter="اكياس مطبوعة" data-translate="printed_bags">اكياس مطبوعة</button>
                 <button class="filter-btn" data-filter="all" data-translate="all">Tümü</button>
             </div>
-            
-            <div class="catalog-grid" id="catalog-grid">
+
+            <div class="editorial-grid" id="catalog-grid">
                 <!-- Items will be injected here via JS -->
             </div>
         </div>
@@ -267,7 +92,7 @@
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <span class="close-lightbox">&times;</span>
+        <span class="close-lightbox" id="closeLightboxBtn">&times;</span>
         <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
         <div class="lightbox-content">
             <img src="" alt="Lightbox Image" id="lightbox-img">
@@ -276,134 +101,252 @@
         <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
 
+    <!-- Dark Footer -->
+    <footer class="footer-dark" style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/logo-gold.png" alt="10 Numara Ambalaj" style="height:48px;">
+                    <p data-translate="footer_desc">Yüksek kaliteli baskılı esnek ambalaj çözümleri ile markanızı bir adım öne taşıyoruz.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="quick_links">HIZLI LİNKLER</h4>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="product_categories">ÜRÜN KATEGORİLERİ</h4>
+                    <ul>
+                        <li><a href="products.html" data-translate="cat_spice">Baharat Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_nuts">Kuruyemiş Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_seed">Tohum Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_market">Baskılı Poşetler</a></li>
+                        <li><a href="products.html" data-translate="cat_custom">Özel Tasarım Ambalajlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-feature">
+                    <img src="images/footer_machinery.png" alt="Machinery" class="footer-feature-img">
+                    <div class="footer-feature-text">
+                        <h3 data-translate="quality_print">Kaliteli Baskı,<br><span style="color:var(--brand-yellow);" data-translate="strong_brand">Güçlü Marka.</span></h3>
+                        <p data-translate="feature_footer_desc">Modern üretim altyapımız ile her gün daha iyisini üretiyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div data-translate="rights_reserved">&copy; 2026 10 Numara Ambalaj. Tüm hakları saklıdır.</div>
+                <div class="footer-lang">
+                    <a href="#" onclick="selectLanguage('tr')" class="active">TR</a> | 
+                    <a href="#" onclick="selectLanguage('en')">EN</a> | 
+                    <a href="#" onclick="selectLanguage('ar')">AR</a>
+                </div>
+                <div class="footer-dev">
+                    <span data-translate="dev_by">Web Tasarım & Yazılım:</span> <button id="fanariDevBtn" style="background:none; border:none; color:var(--brand-yellow); font-family:inherit; font-size:inherit; cursor:pointer; font-weight:600; padding:4px 8px; border-radius:4px; transition:all 0.2s;"><span data-translate="fanari_btn">Fanari Labs - Tıkla ve İletişime Geç</span></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fanari Labs Dev Popup -->
+    <div class="dev-popup" id="devPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:none; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease;">
+        <div class="dev-popup-content" style="background:#151515; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; width:90%; max-width:400px; text-align:center; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.5); transform:translateY(20px); transition:transform 0.3s ease;">
+            <button id="closeDevPopup" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#888; font-size:24px; cursor:pointer;">&times;</button>
+            <h3 style="color:#fff; font-size:24px; margin-bottom:8px;" data-translate="fanari_title">Fanari Labs</h3>
+            <p style="color:#888; font-size:14px; margin-bottom:32px;" data-translate="fanari_desc">Modern Web Teknolojileri ve Tasarım Ajansı</p>
+            
+            <div style="display:flex; flex-direction:column; gap:16px;">
+                <a href="tel:+905379295163" style="display:flex; align-items:center; justify-content:center; gap:12px; background:rgba(255,255,255,0.05); color:#fff; padding:16px; border-radius:12px; transition:all 0.2s; border:1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-phone" style="color:var(--brand-yellow);"></i>
+                    <span style="font-weight:500; font-size:16px;">+90 537 929 51 63</span>
+                </a>
+                <a href="https://fanarilabs.com" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:12px; background:var(--brand-yellow); color:#151515; padding:16px; border-radius:12px; transition:all 0.2s; font-weight:600;">
+                    <i class="fas fa-globe"></i>
+                    <span style="font-size:16px;">fanarilabs.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank" style="position:fixed; bottom:24px; right:24px; background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; box-shadow:var(--shadow-hover); z-index:999; transition:var(--transition-snappy);">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('catalog-grid');
-            const filters = document.querySelectorAll('.filter-btn');
-            
-            // Merge both datasets
-            const allItems = [...catalogItems, ...catalogItems2];
-            
-            function renderItems(filterCategory) {
-                grid.innerHTML = '';
-                let delay = 0;
-                let lastColor = null;
-                
-                // Choose dataset
-                const source = filterCategory === 'all' ? allItems
-                    : filterCategory === 'اكياس مطبوعة' ? catalogItems2
-                    : catalogItems; // default to unprinted (katalog1)
-                
-                source.forEach((item, index) => {
-                    // Insert divider when color/group changes (only for unprinted bags)
-                    if (filterCategory !== 'اكياس مطبوعة' && item.details !== lastColor) {
-                        lastColor = item.details;
-                        
-                        const divider = document.createElement('div');
-                        divider.className = 'color-divider';
-                        divider.style.animationDelay = delay + 's';
-                        
-                        const span = document.createElement('span');
-                        const translateKey = 'color_' + item.details.replace(/ /g, '_');
-                        span.setAttribute('data-translate', translateKey);
+            // Need to wait slightly for catalog-data to be defined
+            setTimeout(() => {
+                if(typeof catalogItems === 'undefined' || typeof catalogItems2 === 'undefined') {
+                    console.error("Catalog data not loaded.");
+                    return;
+                }
+
+                const grid = document.getElementById('catalog-grid');
+                const filters = document.querySelectorAll('.filter-btn');
+
+                // Merge both datasets
+                const allItems = [...catalogItems, ...catalogItems2];
+
+                function renderItems(filterCategory) {
+                    grid.innerHTML = '';
+                    let delay = 0;
+                    let lastColor = null;
+
+                    // Choose dataset
+                    const source = filterCategory === 'all' ? allItems
+                        : filterCategory === 'اكياس مطبوعة' ? catalogItems2
+                            : catalogItems; // default to unprinted (katalog1)
+
+                    source.forEach((item, index) => {
                         const lang = localStorage.getItem('preferredLanguage') || 'tr';
-                        span.textContent = (window.translations && window.translations[lang] && window.translations[lang][translateKey])
-                            ? window.translations[lang][translateKey]
-                            : item.details;
                         
-                        divider.appendChild(span);
-                        grid.appendChild(divider);
-                        delay += 0.05;
-                    }
+                        // Insert divider when color/group changes (only for unprinted bags)
+                        if (filterCategory !== 'اكياس مطبوعة' && item.details !== lastColor) {
+                            lastColor = item.details;
 
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'catalog-item';
-                    itemDiv.style.animationDelay = delay + 's';
-                    
-                    const img = document.createElement('img');
-                    img.src = item.src;
-                    img.alt = item.category;
-                    img.loading = 'lazy';
-                    
-                    img.addEventListener('click', () => {
-                        openLightbox(source, index);
+                            const divider = document.createElement('div');
+                            divider.className = 'color-divider';
+
+                            const span = document.createElement('span');
+                            const translateKey = 'color_' + item.details.replace(/ /g, '_');
+                            span.setAttribute('data-translate', translateKey);
+                            
+                            span.textContent = (window.translations && window.translations[lang] && window.translations[lang][translateKey])
+                                ? window.translations[lang][translateKey]
+                                : item.details;
+
+                            divider.appendChild(span);
+                            grid.appendChild(divider);
+                        }
+
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'editorial-item';
+                        itemDiv.style.cursor = 'pointer';
+
+                        const imgWrapper = document.createElement('div');
+                        imgWrapper.className = 'item-image';
+                        
+                        const img = document.createElement('img');
+                        img.src = item.src;
+                        img.alt = item.category;
+                        img.loading = 'lazy';
+
+                        imgWrapper.appendChild(img);
+                        
+                        const titleWrapper = document.createElement('div');
+                        const title = document.createElement('div');
+                        title.className = 'item-title';
+                        
+                        const catKey = item.category === 'اكياس غير مطبوعة' ? 'unprinted_bags' : 'printed_bags';
+                        title.setAttribute('data-translate', catKey);
+                        title.textContent = (window.translations && window.translations[lang] && window.translations[lang][catKey]) 
+                            ? window.translations[lang][catKey] 
+                            : item.category;
+                            
+                        const cat = document.createElement('div');
+                        cat.className = 'item-category';
+                        
+                        const detailKey = 'color_' + item.details.replace(/ /g, '_');
+                        cat.setAttribute('data-translate', detailKey);
+                        cat.textContent = (window.translations && window.translations[lang] && window.translations[lang][detailKey]) 
+                            ? window.translations[lang][detailKey] 
+                            : item.details;
+
+                        titleWrapper.appendChild(title);
+                        titleWrapper.appendChild(cat);
+
+                        itemDiv.appendChild(imgWrapper);
+                        itemDiv.appendChild(titleWrapper);
+
+                        itemDiv.addEventListener('click', () => {
+                            openLightbox(source, index);
+                        });
+
+                        grid.appendChild(itemDiv);
                     });
-                    
-                    const itemLogo = document.createElement('img');
-                    itemLogo.src = 'images/logo-gold.png';
-                    itemLogo.className = 'item-logo';
-                    itemLogo.alt = '';
-
-                    itemDiv.appendChild(img);
-                    itemDiv.appendChild(itemLogo);
-                    grid.appendChild(itemDiv);
-                    delay += 0.05;
-                });
-            }
-            
-            // Initial render
-            renderItems('اكياس غير مطبوعة');
-            
-            // Re-apply translations
-            if(window.setLanguage) {
-                const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
-                window.setLanguage(savedLang);
-            }
-            
-            // Manually hide loader
-            const loader = document.querySelector('.loader');
-            if (loader) {
-                loader.classList.add('fade-out');
-                setTimeout(() => { loader.style.display = 'none'; }, 500);
-            }
-            
-            // Filter click events
-            filters.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    filters.forEach(f => f.classList.remove('active'));
-                    e.target.classList.add('active');
-                    renderItems(e.target.getAttribute('data-filter'));
-                });
-            });
-
-            // Lightbox
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeBtn = document.querySelector('.close-lightbox');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            let currentImageIndex = 0;
-            let currentFilteredItems = catalogItems;
-
-            function openLightbox(source, index) {
-                currentFilteredItems = source;
-                currentImageIndex = index;
-                updateLightbox();
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-
-            function updateLightbox() {
-                if(currentFilteredItems.length > 0) {
-                    const currentImg = currentFilteredItems[currentImageIndex];
-                    lightboxImg.src = currentImg.src;
-                    lightboxCaption.textContent = (currentImg.details && currentImg.details !== 'standard' && currentImg.details !== 'printed') ? currentImg.details : '';
                 }
-            }
 
-            if(closeBtn) { closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; document.body.style.overflow = ''; }); }
-            if(lightbox) { lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { lightbox.style.display = 'none'; document.body.style.overflow = ''; } }); }
-            if(prevBtn) { prevBtn.addEventListener('click', () => { currentImageIndex = (currentImageIndex - 1 + currentFilteredItems.length) % currentFilteredItems.length; updateLightbox(); }); }
-            if(nextBtn) { nextBtn.addEventListener('click', () => { currentImageIndex = (currentImageIndex + 1) % currentFilteredItems.length; updateLightbox(); }); }
+                // Initial render
+                renderItems('اكياس غير مطبوعة');
 
-            document.addEventListener('keydown', (e) => {
-                if (lightbox && lightbox.style.display === 'flex') {
-                    if (e.key === 'ArrowLeft') { currentImageIndex = (currentImageIndex - 1 + currentFilteredItems.length) % currentFilteredItems.length; updateLightbox(); }
-                    else if (e.key === 'ArrowRight') { currentImageIndex = (currentImageIndex + 1) % currentFilteredItems.length; updateLightbox(); }
-                    else if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+                // Re-apply translations
+                if (window.setLanguage) {
+                    const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+                    window.setLanguage(savedLang);
                 }
-            });
+
+                // Filter click events
+                filters.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        filters.forEach(f => f.classList.remove('active'));
+                        e.target.classList.add('active');
+                        renderItems(e.target.getAttribute('data-filter'));
+                    });
+                });
+
+                // Lightbox
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const lightboxCaption = document.getElementById('lightbox-caption');
+                const closeBtn = document.getElementById('closeLightboxBtn');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                let currentImageIndex = 0;
+                let currentFilteredItems = catalogItems;
+
+                function openLightbox(source, index) {
+                    currentFilteredItems = source;
+                    currentImageIndex = index;
+                    updateLightbox();
+                    lightbox.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function updateLightbox() {
+                    if (currentFilteredItems.length > 0) {
+                        const currentImg = currentFilteredItems[currentImageIndex];
+                        lightboxImg.src = currentImg.src;
+                        lightboxCaption.textContent = currentImg.category + ' (' + currentImg.details + ')';
+                    }
+                }
+
+                if(closeBtn) closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; document.body.style.overflow = ''; });
+                if(prevBtn) prevBtn.addEventListener('click', () => { currentImageIndex = (currentImageIndex - 1 + currentFilteredItems.length) % currentFilteredItems.length; updateLightbox(); });
+                if(nextBtn) nextBtn.addEventListener('click', () => { currentImageIndex = (currentImageIndex + 1) % currentFilteredItems.length; updateLightbox(); });
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) {
+                        lightbox.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (lightbox.style.display === 'flex') {
+                        if (e.key === 'ArrowLeft') {
+                            currentImageIndex = (currentImageIndex - 1 + currentFilteredItems.length) % currentFilteredItems.length;
+                            updateLightbox();
+                        } else if (e.key === 'ArrowRight') {
+                            currentImageIndex = (currentImageIndex + 1) % currentFilteredItems.length;
+                            updateLightbox();
+                        } else if (e.key === 'Escape') {
+                            lightbox.style.display = 'none';
+                            document.body.style.overflow = '';
+                        }
+                    }
+                });
+            }, 100);
         });
     </script>
 </body>

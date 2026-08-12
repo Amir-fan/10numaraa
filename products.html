@@ -1,24 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Galerisi - 10 Numara Ambalaj</title>
+    <title data-translate="page_title_products">Ürün Galerisi - 10 Numara Ambalaj</title>
     <meta name="description" content="10 Numara Ambalaj - Tüm plastik poşet ürünlerimizi keşfedin. Yüksek kaliteli, özel tasarım poşetler için hemen iletişime geçin.">
     <meta name="keywords" content="plastik poşet, poşet baskı, ambalaj, özel tasarım poşet, plastik ambalaj">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" class="active" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
+                
+                
+                <div class="custom-lang-selector">
+                    <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                        <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon" style="font-size: 10px; margin-left:4px;"></i>
+                    </div>
+                    <ul class="lang-menu">
+                        <li onclick="selectLanguage('tr')">Türkçe</li>
+                        <li onclick="selectLanguage('en')">English</li>
+                        <li onclick="selectLanguage('ar')">العربية</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -26,287 +59,175 @@
         <ul>
             <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
             <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
-            <li><a href="products.html" data-translate="products">Ürünler</a></li>
+            <li><a href="products.html" class="active" data-translate="products">Ürünler</a></li>
             <li><a href="contact.html" data-translate="contact">İletişim</a></li>
         </ul>
-        <div class="language-selector">
-            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+        
     </div>
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Loading Animation -->
-    <div class="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Navbar -->
-    <div class="navbar">
+    <section class="section-padding" style="padding-top: 180px;">
         <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo-gold.png" alt="10 Numara Ambalaj Logo"></a>
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
-                    <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
-                    <li><a href="products.html" data-translate="products">Ürünler</a></li>
-                    <li><a href="contact.html" data-translate="contact">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="window.setLanguage(this.value)">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <!-- Products Gallery Section -->
-    <section class="products-gallery">
-        <div class="container">
-            <div class="title">
-                <h2 data-translate="product_gallery">Ürün Galerisi</h2>
-                <p data-translate="quality_solutions">Kaliteli ve dayanıklı plastik poşet çözümlerimiz</p>
-            </div>
-            <div class="notice">
-                <i class="fas fa-phone"></i>
-                <span data-translate="phone_orders">Siparişler sadece telefon üzerinden alınır</span>
-            </div>
-
-            <div class="gallery-grid">
-                <!-- Products from 4 to 12 -->
-                <div class="gallery-item">
-                    <img src="images/product-4.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-5.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-6.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-7.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-8.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-9.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-10.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-11.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/product-12.png" alt="Ürün" class="gallery-img">
-                    <div class="gallery-info">
-                        <a href="tel:+905013668033" class="btn" data-translate="call_now">Hemen Ara</a>
-                    </div>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="eyebrow" style="justify-content: center;" data-translate="product_gallery">ÜRÜN GALERİSİ</div>
+                <h1 class="heading-lg" data-translate="our_products">Ürünlerimiz</h1>
+                <p class="text-lg" style="margin: 0 auto; margin-bottom: 24px;" data-translate="quality_solutions">Kaliteli ve dayanıklı plastik poşet çözümlerimiz</p>
+                <div style="display: flex; justify-content: center;">
+                    <span style="background: var(--bg-alt); padding: 8px 16px; border-radius: var(--radius-full); font-size: 14px; font-weight: 500; color: var(--brand-yellow); border: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-phone"></i> <span data-translate="phone_orders">Siparişler sadece telefon üzerinden alınır</span>
+                    </span>
                 </div>
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <!-- Dynamic pagination will be generated by JavaScript -->
-                <!-- Fallback static pagination -->
-                <a href="products.html" class="active">1</a>
-                <a href="page1.html">2</a>
-                <a href="page2.html">3</a>
-                <a href="page3.html">4</a>
-                <a href="page4.html">5</a>
+            <div class="editorial-grid">
+                <!-- Products -->
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-4.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-5.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-6.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-7.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-8.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-9.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-10.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-11.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+                <div class="editorial-item">
+                    <div class="item-image">
+                        <img src="images/product-12.png" alt="Ürün" loading="lazy">
+                    </div>
+                    <div class="item-title" style="margin-top: 16px;"><a href="tel:+905013668033" style="color:var(--brand-yellow); font-weight:600; text-decoration:none;"><i class="fas fa-phone"></i> <span data-translate="call_now">Hemen Ara</span></a></div>
+                </div>
+            </div>
+            
+            <!-- Pagination (if needed) -->
+            <div class="pagination" style="display:flex; justify-content:center; gap:8px; margin-top:60px;">
+                <a href="products.html" class="page-link active">1</a>
+                <a href="page2.html" class="page-link">2</a>
+                <a href="page3.html" class="page-link">3</a>
+                <a href="page4.html" class="page-link">4</a>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-        <button class="lightbox-prev" id="prevBtn">&#10094;</button>
-        <button class="lightbox-next" id="nextBtn">&#10095;</button>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Dark Footer -->
+    <footer class="footer-dark" style="margin-top: 0;">
         <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h3>Hakkımızda</h3>
-                    <p>10 Numara Ambalaj olarak, yüksek kaliteli plastik poşet çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/logo-gold.png" alt="10 Numara Ambalaj" style="height:48px;">
+                    <p data-translate="footer_desc">Yüksek kaliteli baskılı esnek ambalaj çözümleri ile markanızı bir adım öne taşıyoruz.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Hızlı Linkler</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="quick_links">HIZLI LİNKLER</h4>
                     <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="products.html">Ürünler</a></li>
-                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="index.html" data-translate="home">Ana Sayfa</a></li>
+                        <li><a href="catalog.html" data-translate="catalog">Katalog</a></li>
+                        <li><a href="products.html" data-translate="products">Ürünler</a></li>
+                        <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>İletişim</h3>
+                
+                <div class="footer-nav">
+                    <h4 data-translate="product_categories">ÜRÜN KATEGORİLERİ</h4>
                     <ul>
-                        <li><a href="tel:+905013668033">+90 (501) 366 80 33</a></li>
-                        <li><a href="mailto:on.numara.plastik@gmail.com">on.numara.plastik@gmail.com</a></li>
+                        <li><a href="products.html" data-translate="cat_spice">Baharat Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_nuts">Kuruyemiş Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_seed">Tohum Ambalajları</a></li>
+                        <li><a href="products.html" data-translate="cat_market">Baskılı Poşetler</a></li>
+                        <li><a href="products.html" data-translate="cat_custom">Özel Tasarım Ambalajlar</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Sosyal Medya</h3>
-                    <ul>
-                        <li><a href="https://www.instagram.com/on_numara_ambalaj/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@10.numara.baski.a" target="_blank">TikTok</a></li>
-                    </ul>
+                
+                <div class="footer-feature">
+                    <img src="images/footer_machinery.png" alt="Machinery" class="footer-feature-img">
+                    <div class="footer-feature-text">
+                        <h3 data-translate="quality_print">Kaliteli Baskı,<br><span style="color:var(--brand-yellow);" data-translate="strong_brand">Güçlü Marka.</span></h3>
+                        <p data-translate="feature_footer_desc">Modern üretim altyapımız ile her gün daha iyisini üretiyoruz.</p>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 10 Numara Ambalaj. Tüm Hakları Saklıdır.</p>
+                <div data-translate="rights_reserved">&copy; 2026 10 Numara Ambalaj. Tüm hakları saklıdır.</div>
+                <div class="footer-lang">
+                    <a href="#" onclick="selectLanguage('tr')" class="active">TR</a> | 
+                    <a href="#" onclick="selectLanguage('en')">EN</a> | 
+                    <a href="#" onclick="selectLanguage('ar')">AR</a>
+                </div>
+                <div class="footer-dev">
+                    <span data-translate="dev_by">Web Tasarım & Yazılım:</span> <button id="fanariDevBtn" style="background:none; border:none; color:var(--brand-yellow); font-family:inherit; font-size:inherit; cursor:pointer; font-weight:600; padding:4px 8px; border-radius:4px; transition:all 0.2s;"><span data-translate="fanari_btn">Fanari Labs - Tıkla ve İletişime Geç</span></button>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Fanari Labs Dev Popup -->
+    <div class="dev-popup" id="devPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:none; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease;">
+        <div class="dev-popup-content" style="background:#151515; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; width:90%; max-width:400px; text-align:center; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.5); transform:translateY(20px); transition:transform 0.3s ease;">
+            <button id="closeDevPopup" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#888; font-size:24px; cursor:pointer;">&times;</button>
+            <h3 style="color:#fff; font-size:24px; margin-bottom:8px;" data-translate="fanari_title">Fanari Labs</h3>
+            <p style="color:#888; font-size:14px; margin-bottom:32px;" data-translate="fanari_desc">Modern Web Teknolojileri ve Tasarım Ajansı</p>
+            
+            <div style="display:flex; flex-direction:column; gap:16px;">
+                <a href="tel:+905379295163" style="display:flex; align-items:center; justify-content:center; gap:12px; background:rgba(255,255,255,0.05); color:#fff; padding:16px; border-radius:12px; transition:all 0.2s; border:1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-phone" style="color:var(--brand-yellow);"></i>
+                    <span style="font-weight:500; font-size:16px;">+90 537 929 51 63</span>
+                </a>
+                <a href="https://fanarilabs.com" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:12px; background:var(--brand-yellow); color:#151515; padding:16px; border-radius:12px; transition:all 0.2s; font-weight:600;">
+                    <i class="fas fa-globe"></i>
+                    <span style="font-size:16px;">fanarilabs.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me/905013668033" class="whatsapp-button" target="_blank" style="position:fixed; bottom:24px; right:24px; background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; box-shadow:var(--shadow-hover); z-index:999; transition:var(--transition-snappy);">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Scripts -->
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("active");
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener("click", function(e) {
-            const mobileMenu = document.getElementById("mobileMenu");
-            const menuToggle = document.querySelector(".menu-toggle");
-            
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("active")) {
-                mobileMenu.classList.remove("active");
-            }
-        });
-
-        // Close mobile menu on escape key
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") {
-                const mobileMenu = document.getElementById("mobileMenu");
-                mobileMenu.classList.remove("active");
-            }
-        });
-
-        // Loading Animation
-        window.addEventListener('load', function() {
-            const loader = document.querySelector('.loader');
-            loader.classList.add('fade-out');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const closeLightbox = document.querySelector('.close-lightbox');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const galleryImages = document.querySelectorAll('.gallery-img');
-        let currentImageIndex = 0;
-
-        // Open lightbox
-        galleryImages.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = img.src;
-                lightboxCaption.textContent = img.alt;
-                currentImageIndex = index;
-            });
-        });
-
-        // Close lightbox
-        closeLightbox.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        // Close lightbox when clicking outside
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-
-        // Previous image
-        prevBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].src;
-            lightboxCaption.textContent = galleryImages[currentImageIndex].alt;
-        });
-
-        // Next image
-        nextBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-            lightboxImg.src = galleryImages[currentImageIndex].src;
-            lightboxCaption.textContent = galleryImages[currentImageIndex].alt;
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'ArrowLeft') {
-                    prevBtn.click();
-                } else if (e.key === 'ArrowRight') {
-                    nextBtn.click();
-                } else if (e.key === 'Escape') {
-                    closeLightbox.click();
-                }
-            }
-        });
-    </script>
 </body>
 </html>

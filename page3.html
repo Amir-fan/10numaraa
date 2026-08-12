@@ -33,12 +33,15 @@
                     <li><a href="contact.html" data-translate="contact">İletişim</a></li>
                 </ul>
             </nav>
-            <div class="language-selector">
-                <select id="language-selector" onchange="window.setLanguage(this.value)">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
+            <div class="custom-lang-selector">
+                <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                    <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li onclick="selectLanguage('tr')">Türkçe</li>
+                    <li onclick="selectLanguage('en')">English</li>
+                    <li onclick="selectLanguage('ar')">العربية</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -55,13 +58,16 @@
             <li><a href="products.html" data-translate="products">Ürünler</a></li>
             <li><a href="contact.html" data-translate="contact">İletişim</a></li>
         </ul>
-        <div class="language-selector">
-            <select id="mobile-language-selector" onchange="window.setLanguage(this.value)">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+        <div class="custom-lang-selector">
+                <div class="lang-btn" onclick="toggleLangMenu(this, event)">
+                    <i class="fas fa-globe"></i> <span class="current-lang">TR</span> <i class="fas fa-chevron-down drop-icon"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li onclick="selectLanguage('tr')">Türkçe</li>
+                    <li onclick="selectLanguage('en')">English</li>
+                    <li onclick="selectLanguage('ar')">العربية</li>
+                </ul>
+            </div>
     </div>
 
     <!-- Overlay -->
