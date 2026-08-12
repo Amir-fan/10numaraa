@@ -613,7 +613,7 @@ nav a.active::after {
 
 @media (max-width: 1024px) {
     .products-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .carousel-prev, .carousel-next { display: none; }
+    
 }
 
 /* Credibility Strip */
@@ -1348,4 +1348,11 @@ img {
 .product-card {
     min-width: 280px;
     flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .carousel-prev, .carousel-next { display: flex !important; }
+    .carousel-control { width: 36px; height: 36px; font-size: 14px; }
+    .carousel-prev { left: 4px; }
+    .carousel-next { right: 4px; }
 }
