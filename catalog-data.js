@@ -34,11 +34,7 @@ const catalogItems = [
         "category": "اكياس غير مطبوعة",
         "details": "brown"
     },
-    {
-        "src": "katalog/اكياس غير مطبوعة (8) brown.jpeg",
-        "category": "اكياس غير مطبوعة",
-        "details": "brown"
-    },
+
     {
         "src": "katalog/اكياس غير مطبوعة (31) gold.png",
         "category": "اكياس غير مطبوعة",
