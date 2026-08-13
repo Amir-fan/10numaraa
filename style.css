@@ -1069,24 +1069,18 @@ textarea.form-control {
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    padding: 8px;
-    border-bottom-left-radius: 8px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    border-left: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .editorial-item .watermark img {
-    height: 36px;
+    height: 48px;
     width: auto;
     object-fit: contain;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .editorial-item img {
