@@ -213,7 +213,7 @@
                         const lang = localStorage.getItem('preferredLanguage') || 'tr';
                         
                         // Insert divider when color/group changes (only for unprinted bags)
-                        if (filterCategory !== 'اكياس مطبوعة' && item.details !== lastColor) {
+                        if (item.details !== lastColor) {
                             lastColor = item.details;
 
                             const divider = document.createElement('div');

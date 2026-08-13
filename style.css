@@ -1055,6 +1055,7 @@ textarea.form-control {
 }
 
 .editorial-item .item-image {
+    background-color: #ffffff; /* matching color */
     height: 240px;
     display: flex;
     align-items: center;
