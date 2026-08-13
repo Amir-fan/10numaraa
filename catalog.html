@@ -245,15 +245,6 @@
 
                         imgWrapper.appendChild(img);
                         
-                        // Add watermark
-                        const watermark = document.createElement('div');
-                        watermark.className = 'watermark';
-                        const logoImg = document.createElement('img');
-                        logoImg.src = 'images/logo-gold.png';
-                        logoImg.alt = '10 Numara Logo';
-                        watermark.appendChild(logoImg);
-                        imgWrapper.appendChild(watermark);
-                        
                         const titleWrapper = document.createElement('div');
                         const title = document.createElement('div');
                         title.className = 'item-title';
@@ -276,7 +267,16 @@
                         titleWrapper.appendChild(title);
                         titleWrapper.appendChild(cat);
 
+                        // Add watermark at the edge of the card
+                        const watermark = document.createElement('div');
+                        watermark.className = 'watermark';
+                        const logoImg = document.createElement('img');
+                        logoImg.src = 'images/logo-gold.png';
+                        logoImg.alt = '10 Numara Logo';
+                        watermark.appendChild(logoImg);
+
                         itemDiv.appendChild(imgWrapper);
+                        itemDiv.appendChild(watermark);
                         itemDiv.appendChild(titleWrapper);
 
                         itemDiv.addEventListener('click', () => {
