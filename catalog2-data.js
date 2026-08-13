@@ -15,12 +15,12 @@ const catalogItems2 = [
         "details": "black"
     },
     {
-        "src": "katalog-printed/black/اكياس مطبوعة (62)_black.jpeg",
+        "src": "katalog-printed/black/اكياس_مطبوعة__62__black.png",
         "category": "اكياس مطبوعة",
         "details": "black"
     },
     {
-        "src": "katalog-printed/black/اكياس مطبوعة (63)_black.jpeg",
+        "src": "katalog-printed/black/اكياس_مطبوعة__63__black.png",
         "category": "اكياس مطبوعة",
         "details": "black"
     },
@@ -35,22 +35,7 @@ const catalogItems2 = [
         "details": "brown"
     },
     {
-        "src": "katalog-printed/brown/اكياس مطبوعة (35)_brown.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "brown"
-    },
-    {
         "src": "katalog-printed/brown/اكياس مطبوعة (36)_brown.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "brown"
-    },
-    {
-        "src": "katalog-printed/brown/اكياس مطبوعة (55)_brown.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "brown"
-    },
-    {
-        "src": "katalog-printed/brown/اكياس مطبوعة (56)_brown.jpeg",
         "category": "اكياس مطبوعة",
         "details": "brown"
     },
@@ -70,9 +55,19 @@ const catalogItems2 = [
         "details": "brown"
     },
     {
-        "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (22)_white_silver_cream.jpeg",
+        "src": "katalog-printed/brown/اكياس_مطبوعة__35__brown.png",
         "category": "اكياس مطبوعة",
-        "details": "white_silver_cream"
+        "details": "brown"
+    },
+    {
+        "src": "katalog-printed/brown/اكياس_مطبوعة__55__brown.png",
+        "category": "اكياس مطبوعة",
+        "details": "brown"
+    },
+    {
+        "src": "katalog-printed/brown/اكياس_مطبوعة__56__brown.png",
+        "category": "اكياس مطبوعة",
+        "details": "brown"
     },
     {
         "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (23)_white_silver_cream.jpeg",
@@ -81,11 +76,6 @@ const catalogItems2 = [
     },
     {
         "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (24)_white_silver_cream.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "white_silver_cream"
-    },
-    {
-        "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (25)_white_silver_cream.jpeg",
         "category": "اكياس مطبوعة",
         "details": "white_silver_cream"
     },
@@ -115,17 +105,7 @@ const catalogItems2 = [
         "details": "white_silver_cream"
     },
     {
-        "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (39)_white_silver_cream.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "white_silver_cream"
-    },
-    {
         "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (40)_white_silver_cream.jpeg",
-        "category": "اكياس مطبوعة",
-        "details": "white_silver_cream"
-    },
-    {
-        "src": "katalog-printed/white_silver_cream/اكياس مطبوعة (41)_white_silver_cream.jpeg",
         "category": "اكياس مطبوعة",
         "details": "white_silver_cream"
     },
@@ -220,12 +200,32 @@ const catalogItems2 = [
         "details": "white_silver_cream"
     },
     {
+        "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__22__white_silver_cream.png",
+        "category": "اكياس مطبوعة",
+        "details": "white_silver_cream"
+    },
+    {
+        "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__25__white_silver_cream.png",
+        "category": "اكياس مطبوعة",
+        "details": "white_silver_cream"
+    },
+    {
         "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__29__white_silver_cream.png",
         "category": "اكياس مطبوعة",
         "details": "white_silver_cream"
     },
     {
         "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__34__white_silver_cream.png",
+        "category": "اكياس مطبوعة",
+        "details": "white_silver_cream"
+    },
+    {
+        "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__39__white_silver_cream.png",
+        "category": "اكياس مطبوعة",
+        "details": "white_silver_cream"
+    },
+    {
+        "src": "katalog-printed/white_silver_cream/اكياس_مطبوعة__41__white_silver_cream.png",
         "category": "اكياس مطبوعة",
         "details": "white_silver_cream"
     }
