@@ -232,7 +232,8 @@
                         }
 
                         const itemDiv = document.createElement('div');
-                        itemDiv.className = 'editorial-item';
+                        const isUnprinted = item.category === 'اكياس غير مطبوعة';
+                        itemDiv.className = 'editorial-item ' + (isUnprinted ? 'unprinted-item' : 'printed-item');
                         itemDiv.style.cursor = 'pointer';
 
                         const imgWrapper = document.createElement('div');

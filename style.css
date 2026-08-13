@@ -1063,6 +1063,7 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .editorial-item .watermark {
@@ -1343,6 +1344,10 @@ textarea.form-control {
     .carousel-wrapper { padding: 0 16px; }
     .product-carousel { scroll-snap-type: x mandatory; }
     .product-card { scroll-snap-align: start; }
+    
+    .printed-item .item-image img {
+        transform: scale(1.3);
+    }
 }
 
 /* Fix mobile menu internal spacing */
